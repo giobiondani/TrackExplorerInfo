@@ -1,0 +1,1303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="Assets_help/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="Assets_help/favicon-32x32.png" sizes="32x32" type="image/png">
+    <link rel="icon" href="Assets_help/favicon-16x16.png" sizes="16x16" type="image/png">
+
+    <title>Help - TrackExplorer</title>
+    <style>
+        body {
+            font-family: Segoe UI, Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 20px;
+            background-color: #f9f9f9;
+        }
+        h1, h2, h3 {
+            color: #005a9e;
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        h2 {
+            margin-top: 30px;
+            margin-bottom: 15px;
+            cursor: pointer;
+            padding: 10px;
+            background-color: #e8f4f8;
+            border-left: 4px solid #005a9e;
+        }
+        h2:hover {
+            background-color: #d4ebf5;
+        }
+        .image-gallery {
+            margin: 20px 0;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+        .gallery-image {
+            width: 100%;
+            max-width: 800px;
+            height: auto;
+            display: none;
+        }
+        .gallery-image.active {
+            display: block;
+        }
+        .image-alone {
+            width: 100%;
+            max-width: 800px;
+            height: auto;
+            display: block;
+        }
+        .gallery-caption {
+            padding: 10px;
+            background-color: #f5f5f5;
+            font-style: italic;
+            font-size: 0.9em;
+            text-align: center;
+        }
+        .gallery-controls {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 10px;
+            background-color: #f5f5f5;
+            gap: 15px;
+        }
+        .gallery-button {
+            padding: 8px 16px;
+            background-color: #005a9e;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+        .gallery-button:hover {
+            background-color: #004080;
+        }
+        .gallery-button:disabled {
+            background-color: #ccc;
+            cursor: not-allowed;
+        }
+        .gallery-counter {
+            font-size: 14px;
+            color: #666;
+        }
+        h3 {
+            margin-top: 20px;
+            margin-bottom: 10px;
+            font-size: 1.1em;
+        }
+        h4 {
+            margin-top: 15px;
+            margin-bottom: 8px;
+            font-weight: bold;
+            color: #333;
+        }
+        p {
+            margin-bottom: 1em;
+        }
+        ul {
+            margin-bottom: 1em;
+            padding-left: 20px;
+        }
+        a {
+            color: #005a9e;
+        }
+        .section-content {
+            display: none;
+            padding: 15px 10px;
+        }
+        .section-content.active {
+            display: block;
+        }
+        .badge {
+            display: inline-block;
+            padding: 2px 6px;
+            font-size: 10px;
+            font-weight: bold;
+            border-radius: 3px;
+            margin-left: 5px;
+        }
+        .badge-beta {
+            background-color: orange;
+            color: white;
+        }
+        .badge-ext {
+            background-color: lightgreen;
+            color: black;
+        }
+        .indent {
+            margin-left: 20px;
+        }
+        .indent2 {
+            margin-left: 40px;
+        }
+        .footer {
+            margin-top: 40px;
+            font-size: 0.9em;
+            text-align: center;
+            color: #666;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 10px 0;
+        }
+        table td {
+            padding: 5px;
+            vertical-align: top;
+        }
+        table td:first-child {
+            font-style: italic;
+            width: 30%;
+        }
+        .warning {
+            background-color: #fff4e5;
+            border-left: 4px solid #ff9800;
+            padding: 10px;
+            margin: 15px 0;
+        }
+        .expand-all {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .expand-all button {
+            padding: 10px 20px;
+            background-color: #005a9e;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+        .expand-all button:hover {
+            background-color: #004080;
+        }
+    </style>
+</head>
+<body>
+    <h1>TrackExplorer help &amp; documentation</h1>
+
+    <h2 onclick="toggleSection(this)">Overview</h2>
+    <div class="section-content">
+        <h3>Demo mode</h3>
+        <p>If you want to familiarize yourself with the app before you start creating and organizing your own tracks, you can switch to demo mode in the Settings page. This will populate the app with demo data that includes photos, GPX files, and is fully functional. You can add new tracks, edit or delete existing ones, edit the GPX files, create and use views, etc. This data can be easily restored to its initial state also in the Settings page.</p>
+        <p>You can switch between demo and live data at any time; any changes previously made to the demo data will be preserved while you are in live mode. The mode (demo or live) is displayed at the bottom of the Track page.</p>
+
+        <h3>Navigation</h3>
+        <p>The main page is the Tracks page, also known as the Home page, which shows a view of your tracks. Here you can select one or more tracks. In the other pages, you can access other general functionality, or functions specific to the track or tracks that you selected:</p>
+        <ul>
+            <li><strong>New track</strong>: create a new track</li>
+            <li><strong>Track details</strong>: view the details of the first selected track</li>
+            <li><strong>Photos</strong>: view the pictures associated with all selected tracks</li>
+            <li><strong>Profiles</strong>: view the distance/time and elevation profiles of the selected track(s). The selected tracks must have elevation data in the GPX file.</li>
+            <li><strong>Map</strong>: view the selected track(s) overlayed on a map. The selected track(s) must have coordinate data in the GPX file.</li>
+            <li><strong>Collections</strong>: view the list of all collections, or the list of collections that include the selected track(s)</li>
+            <li><strong>History</strong>: view the performance data for the selected tracks over time (for example, distance by week)</li>
+            <li><strong>Planner</strong>: available only when a planned track is selected. Provides functionality to estimate the time needed for the planned track</li>
+            <li><strong>Compare tracks</strong>: view the performance data for the selected tracks in a table, easy to compare</li>
+            <li><strong>GPX data</strong>: provides functionality to edit the GPX file associated with the first selected track</li>
+            <li><strong>Edit tracks</strong>: update data on all selected tracks</li>
+            <li><strong>Views</strong>: create and manage views</li>
+            <li><strong>Help</strong>: access this help page; there is one section for each of the pages</li>
+            <li><strong>Settings</strong>: configure TrackExplorer's settings</li>
+        </ul>
+
+        <h3>How to organize data</h3>
+        <p>TrackExplorer accesses two types of data: GPX files and images. Completed tracks can only have one GPX file. Planned tracks can have multiple GPX files. Both types of track can have multiple image files.</p>
+
+        <h4>GPX files</h4>
+        <p class="indent">GPX files for completed tracks can be organized in any way; the simplest is to store all of them in the same folder, but you can also create different folders by activity, year, location, etc. GPX files for planned tracks must be organized in the same folder. This folder may be placed inside one of the general GPX folders described above.</p>
+
+        <h4>Image files</h4>
+        <p class="indent">When you create or edit a track, you may select a hero image. The location of the hero image lets TrackExplorer know where to look for the images to display in the Photos and Map pages. Generally, you would want to save all images related to a track in the same folder.</p>
+        <p class="indent">If you have multiple tracks that are closely related to each other (for example recorded on the same day during the same excursion), you may want to place all of them in the same folder. This way, when you select a single track and navigate to the Photos page, or display the images on the Map page, you can see all images at the same time. The Photos and Map pages will display all images from the folder where the hero image is located, as well as all its subfolders.</p>
+
+        <h4>Changing the folder structure</h4>
+        <p class="indent">You should decide a folder structure that makes sense to you before you get too far. However, if you need to change it when you already have several tracks, you can use the functionality in the Edit tracks page to mass-update the hero image and GPX file path on multiple tracks at the same time.</p>
+
+        <h3>Special functionality</h3>
+        <p>Functions marked with the <span class="badge badge-beta">BETA</span> icon are in pre-release status; the functionality may not be complete and there may be bugs.</p>
+        <p>Functions marked with the <span class="badge badge-ext">EXT</span> icon depend on external services. The availability of these services may change or disappear over time.</p>
+
+        <h3>Sharing <span class="badge badge-beta">BETA</span></h3>
+        <p>The sharing functionality is based on creating sharable content (image files or web pages), and saving it on your PC or uploading it to the Netlify hosting service. If you choose the option to save the content to your device, you can then upload it, publish it or share it as you wish. If you choose to upload to Netlify, you can share links to the pages directly from TrackExplorer. In order to use functionality related to Netlify, you will need to enter your site id and access token in the Settings page.</p>
+        <p>You can access sharing functionality from the following areas:</p>
+        <ul>
+            <li><strong>Details page</strong>: create a web page with data related to the selected track, then save it on your PC or upload it to Netlify.</li>
+            <li><strong>Tracks page</strong>: create a web page for all selected tracks, then save it on your PC or upload it to Netlify; or share a link to any page that you already uploaded to Netlify.</li>
+            <li><strong>Profiles page</strong>: save the chart as an image on your PC.</li>
+            <li><strong>Map page</strong>: save the map as an image on your PC.</li>
+        </ul>
+        <p>This functionality is in beta and is subject to changes in future releases.</p>
+
+        <h3>Multiple devices</h3>
+        <p>If you install TrackExplorer on multiple devices, you can access the saved files (images and gpx files) from all devices, as long as they have been saved in your OneDrive account. Even if OneDrive is on a different path in each machine, TrackExplorer will attempt to resolve the correct path.</p>
+
+        <h3>Logging in</h3>
+        <p>You can log in to TrackExplorer using a Microsoft account. This is required only to have access to the optional map types in the Map page. See more details in the Map page section below.</p>
+
+        <h3>Help</h3>
+        <p>Some pages display infoboxes with details about the available functionality. Each infobox will be displayed every time the page is open unless you uncheck the "Show this information again" checkbox. This can be changed in the settings page as well. The infoboxes can always be toggled open and closed with the info button in the navigation pane.</p>
+    </div>
+
+    <h2 onclick="toggleSection(this)">Glossary</h2>
+    <div class="section-content">
+        <h3>Activity</h3>
+        <p>The activity performed in the track. When you import a GPX file, TrackExplorer may prepopulate the value based on the corresponding tag of the file, but you can override it. The activity can be used to group and filter tracks. When you start typing in the activity field, TrackExplorer will make suggestions based on activities that you entered before.</p>
+
+        <h3>Ascent</h3>
+        <p>The total elevation climbed in the course of the track. If the track climbs 100, descends 50 and climbs again 100, the ascent value will be 200.</p>
+
+        <h3>Ascent speed</h3>
+        <p>The total ascent divided by the time spent ascending (each step in the GPX file is either ascending, descending or flat. Only the time related to ascending steps is counted for this calculation).</p>
+
+        <h3>Collections</h3>
+        <p>Use collections to connect different tracks. Once multiple tracks are connected, you can navigate from one track to the others (in the Details page), or you can view them all together in the Tracks page (using filters or special filters) or in the Collections page. The typical use is to associate multiple tracks that are part of the same trip or the same project (for example, you may have a planned track, a few failed attempts, and a successful attempt all related together). Collections can be created in the Details page or in the Tracks page.</p>
+
+        <h3>Data is verified</h3>
+        <p>This field indicates that the performance data has been verified by the user. Generally speaking, the data collected from the GPX file may have errors or imprecisions. If you correct and/or validate the data (manually or by using one of the techniques available in the GPX data page) you can mark it as verified. You can then be more confident in the values if you use them for example as a reference in the Planner page.</p>
+
+        <h3>Date</h3>
+        <p>The date when the track was recorded. Based on this date, TrackExplorer automatically determines the season, the ski season and the year, which can be used to group tracks (for example using colors in the Tracks or Map pages).</p>
+
+        <h3>Descent</h3>
+        <p>The total elevation descended in the course of the track. If the track descends 100, climbs 50 and descends again 100, the descent value will be 200.</p>
+
+        <h3>Descent speed</h3>
+        <p>The total descent divided by the time spent descending (each step in the GPX file is either ascending, descending or flat. Only the time related to descending steps is counted for this calculation).</p>
+
+        <h3>Description</h3>
+        <p>A description of the track.</p>
+
+        <h3>Distance</h3>
+        <p>Four values are calculated and displayed: total, ascending, descending and flat distance. The total distance is always equal to the sum of the others. These values can be edited in the Details page if needed.</p>
+
+        <h3>Elevation gain</h3>
+        <p>The difference between ascent and descent.</p>
+
+        <h3>Elevation range</h3>
+        <p>The range between the lowest and highest elevation on the track. Depending on the page, it may be displayed as both the low and high elevations (e.g. 700-1000) or just with the difference between them (e.g. 300).</p>
+
+        <h3>Gear</h3>
+        <p>The equipment used for the track. For example, for skiing activities this could be the type/model of skis; for biking activities, it could be the type/model of bicycle. Use slashes to create a tree structure: for example, entering the gear as Bike/Mountain/Yeti SB130 will create three nested levels. You will then be able to easily filter for all mountain bikes or all bikes. The gear can be used to group and filter tracks. When you start typing in the gear field, TrackExplorer will make suggestions based on gear that you entered before. You can also use the Gear button to open a navigation tree based on the existing gear structure.</p>
+
+        <h3>Laps/runs</h3>
+        <p>The number of laps or runs, depending on the activity. For example for skiing, this number could represent the number of runs skied. For track running, this could be the number of laps completed.</p>
+
+        <h3>Hero image</h3>
+        <p>This is the main image associated with a track. It's displayed in the Details page, as well as the Tracks page. The Photos page displays all image files contained in the same folder where the hero image is found. Therefore, we recommend to place all pictures related to a track in the same folder, and to select the hero image from that folder.</p>
+
+        <h3>Link</h3>
+        <p>Use links to associate additional information to a track. For example, link online reviews, maps or pictures for a trail. This is particularly useful for planned tracks, when you are trying to make sense of multiple sources of information. You can create and view links in the Details page.</p>
+
+        <h3>Location</h3>
+        <p>The area where the track is. Use slashes to create a tree structure: for example, entering a location as USA/Colorado/Keystone will create three nested levels. You will then be able to easily filter for example all locations within Colorado or within the USA. The location can be used to group and filter tracks. When you start typing in the location field, TrackExplorer will make suggestions based on locations that you entered before. You can also use the Location button to open a navigation tree based on the existing location structure.</p>
+
+        <h3>Munter rate</h3>
+        <p>The Munter calculation can be used to estimate the time that it takes to complete a track. The formula is as follows: <strong>Hours = (distance + ascent / 100) / rate</strong>. The distance is expressed in Km and the ascent in m. The rate varies depending on the activity, terrain features, difficulty, etc. The rate can vary for example from 2 for hiking off trail, to 10 for skiing downhill. For a track with known time, distance and elevation, TrackExplorer reverse calculates four rates - a total rate for the entire track, and separate rates for the uphill, downhill and flat sections. These calculated rates can be used to compare the difficulty of similar activities and tracks, and to estimate the time of planned tracks. See the Planner page for more details and applications.</p>
+
+        <h3>People</h3>
+        <p>The list of people who participated in the activity. If used consistently across different tracks, they can be used to group tracks, for example in filters or with different colors in the Map page. When grouping tracks by people in the Map page, you have two options: one is to group all tracks that have exactly the same people; the other is to group tracks based on whether they have or don't have a specific person (for example, grouping all tracks with person "Alice", regardless of what the other people are).</p>
+
+        <h3>Performance data</h3>
+        <p>This refers to a set of values calculated from a GPX file: distance (uphill, downhill, flat, and total); time (uphill, downhill, flat, and total); ascent and descent; the corresponding speeds; the Munter rates (uphill, downhill, flat, and total); and the minimum and maximum elevations, and elevation range. When you edit the GPX file you have the option to update these values based on the edited file, or leave them as they were originally. This data is displayed or used in the Tracks, New track, Details, History, Planner, Compare tracks, Edit tracks, and Views pages.</p>
+
+        <h3>Related tracks</h3>
+        <p>See Collections above</p>
+
+        <h3>Season</h3>
+        <p>Based on the date of the track, TrackExplorer assigns a season automatically, using the following dates: Spring starting on March 20, Summer starting on June 21, Fall starting on September 22 and Winter starting on December 21. The seasons are reversed if the GPX file indicates that the track was recorded in the southern hemisphere, based on its starting point. These dates may not be accurate for every year, but you have the option to set the season manually when you create or edit a track.</p>
+
+        <h3>Ski season</h3>
+        <p>Used to group tracks (for example displaying them with different colors in the Tracks or Map pages). The typical use is for skiing (in the northern hemisphere) or other activities that have a natural season spanning different seasons and years. For example, if you want tracks in December 2024, January 2025 and April 2025 to all be in the same group, you wouldn't be able to do it using the Season or Year fields, but you can using the Ski season field. The beginning of the ski season (by default September 1) can be defined in the Settings page.</p>
+
+        <h3>Speed</h3>
+        <p>TrackExplorer calculates two types of speeds: Distance speeds (km/h or mph) with separate values for uphill, downhill, flat sections and total; and Elevation speeds (m/h or ft/h) with separate values for ascent and descent. These values are calculated based on distance, ascent/descent, and times; they cannot be edited.</p>
+
+        <h3>Status (Planned vs. Completed)</h3>
+        <p>The status of each track can be either "Planned" or "Completed". A planned track is a track that you haven't done yet, but you are researching and planning out. You may have in mind different alternative routes, or different segments, that you have planned out in software such as Caltopo. For this purpose, TrackExplorer allows you to import multiple GPX files into the same track. Planned tracks can then be estimated in the Planner page. Completed tracks are tracks that have already been done. You can associate a single GPX file to each completed track. If you want to connect multiple completed tracks to each other (perhaps because they are part of the same trip), you can achieve that using collections. You can use collections also to connect a completed track to the original planned track.</p>
+
+        <h3>Tags</h3>
+        <p>A series of words associated to a track and used to describe it. If used consistently across different tracks, they can be used to group tracks, for example in filters or with different colors in the Map page. When grouping tracks by tag in the Map page, you have two options: one is to group all tracks that have exactly the same tags; the other is to group tracks based on whether they have or don't have a specific tag.</p>
+
+        <h3>Time</h3>
+        <p>Four values are calculated and displayed: total, ascending, descending and flat time. The total time is always equal to the sum of the others. These values can be edited in the Details page if needed.</p>
+
+        <h3>Units of measurement</h3>
+        <p>Track data can be displayed using either the US Customary System (miles and feet) or the Metric system (kilometers and meters). You can select which system to use in the Tracks page; the selection then applies to all other pages. <br/>
+By default, TrackExplorer uses US Customary units if your Windows user's language setting is US English, and Metric units otherwise.<br/>
+Miles and kilometers (for both distances and speeds) are always rounded to the closest second decimal. Feet and meters (for both distances and speeds) are always rounded to the closest integer.<br/>
+Because of the rounding rules used in the calculations, when you switch systems you may see small differences in some values. For example, if you create a track with US Customary and display it in Metric, some of the values may be slightly different from those that you would have seen had you created the track directly in Metric.</p>
+        
+        <h3>Valid elevation data</h3>
+        <p>The track is associated with a GPX file that contains valid elevation data that can be displayed in the Profiles page.</p>
+
+        <h3>Valid map data</h3>
+        <p>The track is associated with a GPX file that contains valid coordinates that can be displayed on a map.</p>
+    </div>
+
+    <h2 onclick="toggleSection(this)">Tracks page</h2>
+    <div class="section-content">
+        <h3>Overview</h3>
+        <p>This is the main page of the app. It shows the list of all tracks (or if you have a view selected, only the tracks included in that view). You can select one or more tracks, perform functions on the selected tracks in this page, or navigate to other pages for additional functionality. Along the top of the window there are buttons that allow you to customize the appearance of the page and manage the selected tracks.</p>
+
+        <h3>Buttons and functions</h3>
+        
+        <h4>Home</h4>
+        <p class="indent">Returns to the default view. If no view has been set as default, it shows all tracks.</p>
+
+        <h4>Views</h4>
+        <p class="indent">Shows a tree view of all views that have been created. You can select one and the page will only show the tracks included in that view. The name of the selected view is shown at the bottom of the screen, along with the number of tracks included in the view.</p>
+
+        <h4>Back</h4>
+        <p class="indent">Returns to the previously selected view.</p>
+
+        <h4>Quick search</h4>
+        <p class="indent">Type the search text and press enter. A new quick filter is automatically created based on the search text. The quick filter is not saved in Filters, but it is included in the filter history (Back button). The quick filter will match tracks that include the search text in any of their fields, but some special criteria are available:</p>
+
+        <h4 class="indent">Dates</h4>
+        <p class="indent2">If the search text can be interpreted as a date, the search will find all tracks that match the date. However, if the search text can be interpreted as a date but you want it to be used as text, use the + symbol at the beginning of the text.<br/>For example:</p>
+        <table class="indent2">
+            <tr>
+                <td>Search text</td>
+                <td>Result</td>
+            </tr>
+            <tr>
+                <td>11/1/2024</td>
+                <td>All tracks with a date of November 1, 2024. The date format is based on your system localization settings.</td>
+            </tr>
+            <tr>
+                <td>2024</td>
+                <td>All tracks from any date in 2024</td>
+            </tr>
+            <tr>
+                <td>November</td>
+                <td>All tracks from any day in November of any year. The name of the month is based on your system language.</td>
+            </tr>
+            <tr>
+                <td>November 2024</td>
+                <td>All tracks from November 2024. The name of the month is based on your system language.</td>
+            </tr>
+            <tr>
+                <td>November 1</td>
+                <td>All tracks from November 1 of any year. The name of the month is based on your system language.</td>
+            </tr>
+            <tr>
+                <td>+ April</td>
+                <td>All tracks that contain the word &quot;April&quot;, instead of all tracks with a date in April of any year. Useful for example if you are looking for tracks that involve a person named April.</td>
+            </tr>
+        </table>
+
+        <h4 class="indent">Numeric values</h4>
+        <p class="indent2">If the search text can be interpreted as a field name with a range of values, the search will find all tracks that match the range for that field.<br/>For example:</p>
+        <table class="indent2">
+            <tr>
+                <td>Search text</td>
+                <td>Result</td>
+            </tr>
+            <tr>
+                <td>Munter = :7</td>
+                <td>All tracks with a Munter rate less than 7</td>
+            </tr>
+            <tr>
+                <td>Distance = 15:</td>
+                <td>All tracks with a distance greater than 15 (in the selected unit of measure)</td>
+            </tr>
+            <tr>
+                <td>Speed = 5:10</td>
+                <td>All tracks with a speed between 5 and 10 (in the selected unit of measure)</td>
+            </tr>
+            <tr>
+                <td>Ascent = 1000</td>
+                <td>All tracks with an ascent value of exactly 1000 (in the selected unit of measure)</td>
+            </tr>
+            <tr>
+                <td>Hours = 2.5:</td>
+                <td>All tracks with a time over two and a half hours. The same could be achieved with &quot;Minutes = 150:&quot;</td>
+            </tr>
+            <tr>
+                <td>+ Distance = 15</td>
+                <td>All tracks that contain the text &quot;Distance = 15&quot;, instead of all tracks with a distance of exactly 15.</td>
+            </tr>
+        </table>
+
+        <p class="indent2"> The available field names for this functionality are: Distance, Ascent, Descent, Speed, Munter, Minutes and Hours.</p>
+
+        <h4>Special views</h4>
+        <p class="indent">Apply a quick temporary view that finds tracks similar in some way to the selected one - related tracks, same activity, gear, location, people, or tags. The quick filter is not saved in Filters, but it is included in the filter history (Back button).</p>
+
+        <h4>View all</h4>
+        <p class="indent">Removes the currently selected view and displays all tracks.</p>
+
+        <h4>Sort</h4>
+        <p class="indent">Sort the displayed tracks by a specific field. This overrides the selected view's default sorting, if any.</p>
+
+        <h4>Select</h4>
+        <p class="indent">Change the track selection: press the button to select all tracks; if all tracks are already selected, press it to unselect. The number of selected tracks is displayed at the bottom of the screen.</p>
+
+        <h4>Collect</h4>
+        <p class="indent">Add all selected tracks to an existing or new collection.</p>
+
+        <h4>Delete</h4>
+        <p class="indent">Delete all selected tracks.</p>
+
+        <h4>Totals</h4>
+        <p class="indent">Displays a dialog with the total and average distances, times, elevations, and speeds for all selected tracks.</p>
+
+        <h4>Images</h4>
+        <p class="indent">Select how the tracks are displayed: small, medium, or large images together with data fields; only data fields with no images; larger images with no data fields. This selection overrides the default image size defined in the view, if any. The selected image size is displayed at the bottom of the screen.</p>
+
+        <h4>Data fields</h4>
+        <p class="indent">Select the field that you want to see displayed along with the images. The selections you make apply to the currently selected image size. You can make different selections for each image size. The selected fields are remembered only until you close the app, unless you save them. In the Settings page, you have the option to revert to the default fields.</p>
+
+        <h4>Colors</h4>
+        <p class="indent">Select the field by which you want to set the background color of the tiles. TrackExplorer selects the colors that are most differentiating, given the number of values for the selected field. This selection overrides the setting defined in the view, if any. The selected field is displayed at the bottom of the screen, along with a legend with the meaning of each color.</p>
+
+        <h4>Units</h4>
+        <p class="indent">Select the system of units used to display the performance data. Choose between the US Customary System and the Metric system. The default system is based on the Windows language settings (USCS is used for the en-US language, Metric for all other languages). The selected system is used in all pages of the app, not only the Tracks page. The selected system is displayed at the bottom of the screen.</p>
+
+        <h4>Account</h4>
+        <p class="indent">Log in or out of your Microsoft account. This is required in order to have access to the optional map types. See the help for the Maps page for more details.</p>
+
+        <h4>Tutorial</h4>
+        <p class="indent">Start the tutorial that shows one by one the features available in the Tracks page.</p>
+
+        <h4>Support</h4>
+        <p class="indent">If you like TrackExplorer, consider supporting its future development ❤️</p>
+    </div>
+
+    <h2 onclick="toggleSection(this)">New track page</h2>
+    <div class="section-content">
+        <p>To create a new track, select the track <strong>status</strong> first - if it's a track that you already completed, select <strong>Complete</strong> and pick a single GPX file to represent the track. If you have multiple files, you may combine them later in the Edit GPX page. If it's a planned track, select <strong>Planned</strong> and you will be able to select a whole folder where you may have multiple GPX files for different sections or alternative routes. You can then pick one of these files to use for the performance data and the map.</p>
+
+        <p>Then enter the track information: Name, Description, Date (populated by default from the GPX file data, if available), Season (automatically calculated from the date), Location, Activity (populated by default from the GPX file data, if available), Gear, People, and Tags.</p>
+
+        <p>Location and gear can be set up with a hierarchical structure, each node being separated by a / symbol. Start with the most encompassing entity: for example "USA/California/Yosemite" for the location or "Bike/MTB/Cross-country" for the gear. Once you set up the hierarchical structure, you can navigate it on a tree using the World/Gear icons to select an existing value.</p>
+
+        <p>Then select the <strong>Hero image file</strong>. The selected image will be shown to represent the track in several pages, including the Tracks page. When navigating to the Photos page for the track, TrackExplorer will display all images from the same folder of the hero image (including all subfolders). Therefore, it makes sense to place all and only the images related to an individual track in the same folder. TrackExplorer supports multiple image formats, but jpeg is preferred for performance. If you don't select an image, TrackExplorer will use a default placeholder. If you prefer, you can press the "Use map" button to generate an image from the track's map. The image file will be saved in the app folder.</p>
+
+        <p>You can then populate some other fields: Laps/runs (representing the number of laps or runs completed in the track), Custom fields 1-3 (these fields can be used for any purpose; the labels and data types can be configured in the Settings page), and Custom field 4 (this field can also be used for any purpose, but it can only be text). The custom fields must be enabled in the Settings page before they can be used.</p>
+
+        <p>The values in the location, activity, gear, people, tags, and custom fields will be saved and presented for quick selection the next time a new track is created.</p>
+
+        <p>Depending on the data that is available in the GPX file, it may or may not be possible to display the track in the Map or Profiles page. This is indicated by the <strong>Valid map data</strong> and <strong>Valid elevation data</strong> checkboxes. These checkboxes are set automatically and can't be changed.</p>
+
+        <p>When ready, use the <strong>Save</strong> button to save the track and go back to the Tracks page, the <strong>Save & new</strong> button to save the track and start creating a new one, or the <strong>Discard</strong> button to go back to the Tracks page without saving the new track. When saving, check the <strong>Replace current selection</strong> checkbox to replace the currently selected track(s) with the newly created one.</p>
+    </div>
+
+    <h2 onclick="toggleSection(this)">Track details page</h2>
+    <div class="section-content">
+        <p>View and edit a track's data. All the fields outlined in the New track page help section are also available in the Track details page. Additionally, you have options to recalculate some or all of the performance data from the GPX file, manage links to outside resources, and manage relationships to other tracks (collections).</p>
+
+        <p>Use the <strong>Links</strong> section to create connections to web pages that contain information relevant for the track, for example trip reports, maps, pictures, etc.</p>
+
+        <p>Use the <strong>Related tracks</strong> section to add the track to one or more collections and view all tracks in the same collections. You can use this for example if you have multiple tracks for the same trip and you want to keep them connected so they are easier to find.</p>
+    </div>
+
+    <h2 onclick="toggleSection(this)">Photos page</h2>
+    <div class="section-content">
+        <p>Displays all photos for the selected tracks. Each track is associated with a hero image. The photos displayed in this page are all photos found in the same folder as the hero image.</p>
+
+        <p>You have different options for how the photos should be displayed:</p>
+        <ul>
+            <li><strong>Gallery</strong>: all photos in the same page</li>
+            <li><strong>Slideshow</strong>: one photo at a time</li>
+            <li><strong>Open the first folder</strong>: opens Windows Explorer with the path of the first folder for the selected track(s)</li>
+        </ul>
+    </div>
+
+    <h2 onclick="toggleSection(this)">Profiles page</h2>
+    <div class="section-content">
+        <p>Display the elevation data of the selected track(s) in a chart.</p>
+
+        <h3>Options</h3>
+        <p>All of the options listed below can be set as predefined values in a view. When you open the Profiles page from a view, the options will be set accordingly.</p>
+
+        <h4>Chart type</h4>
+        <p class="indent">The chart type determines what are the values shown on the X and Y axis of the chart. The options are: Elevation by distance, Cumulative elevation gain by distance, Distance by time, Elevation by time, Cumulative elevation gain by time, and Time by distance.</p>
+
+        <h4>Elevation display</h4>
+        <p class="indent">Sets the range of the elevation axis as follows:</p>
+        <ul class="indent">
+            <li><strong>Absolute from 0</strong>: the chart starts at elevation 0, regardless of the track</li>
+            <li><strong>Absolute from lowest point</strong>: the chart starts at the lowest point of all selected tracks; this is useful to zoom in on the elevation differences</li>
+            <li><strong>Relative</strong>: all tracks start at the same point in the chart; this is useful to focus on the elevation gain rather than the absolute elevation when comparing tracks</li>
+        </ul>
+
+        <div class="image-gallery" id="profilesGallery">
+            <img src="Assets_help/From0.jpg" class="gallery-image active" alt="Absolute from 0">
+            <img src="Assets_help/FromLowest.jpg" class="gallery-image" alt="Absolute from lowest point">
+            <img src="Assets_help/Relative.jpg" class="gallery-image" alt="Relative">
+            <div class="gallery-caption">
+                <span id="profilesCaption">Absolute from 0: the chart starts at elevation 0 and each track is displayed at its actual elevation</span>
+            </div>
+            <div class="gallery-controls">
+                <button class="gallery-button" onclick="changeImage('profilesGallery', -1)">← Previous</button>
+                <span class="gallery-counter"><span id="profilesCurrent">1</span> / <span id="profilesTotal">3</span></span>
+                <button class="gallery-button" onclick="changeImage('profilesGallery', 1)">Next →</button>
+            </div>
+        </div>
+
+        <h4>Other options</h4>
+        <p class="indent">The other available options are self-explanatory: Background color, Plot line thickness, Display grid lines, Gridline intervals for distances/elevations/time, Font size for labels, Gridline color, and Gridline thickness.</p>
+        
+
+        <h3>Legend</h3>
+        <p>Each different track is displayed in a different color. The legend shows the association between the colors and the track names.</p>
+
+        <h3>3rd dimension</h3>
+        <p>The chart can work with distance, elevation and time. Each axis can show one of them, which means that the third one is not visible.<br/>If you want to see some information about the 3rd dimension, you can use the slider to find specific points along that dimension, and they will be displayed as points on the chart.<br/>
+        In the example below, the chart (Elevation by Distance) shows the distance on the x axis and the elevation on the y axis. In this case, the 3rd dimension is time. The slider was placed at 112 minutes. The three dots show the 112 minute point for each track - this shows that the blue track was much faster than the others, at least up to this point.</p>
+        <img src="Assets_help/3rd.png" class="image-alone" alt="Show the time in the 3rd dimension">
+
+        <h3>Share</h3>
+        <p>Use this button to save a copy of the chart exactly as displayed on the screen. The image is saved in JPEG format with the same resolution as the screen where it's displayed. For best results, make sure that the window is on a larger screen.</p>
+
+        <h3>Other features</h3>
+        <p>Right-click on any point in the chart to display the axis values at that point.</p>
+    </div>
+
+    <h2 onclick="toggleSection(this)">Map page</h2>
+    <div class="section-content">
+        <p>Displays all selected tracks on the map. The map is automatically zoomed to fit all tracks in the same view.</p>
+
+        <h3>Show tools</h3>
+        <p>Toggle the menus on and off, so you can focus on the map when the tools are not needed.</p>
+
+        <h3>Navigation</h3>
+        <p>Use these buttons to navigate in the map (but you can also use the mouse or touchscreen). The buttons allow you to pan in all directions (up, down, left, right), zoom in and zoom out.</p>
+
+        <h3>Options</h3>
+
+        <h4>Map type <span class="badge badge-ext">EXT</span></h4>
+        <p class="indent">The style of the background map on which the tracks are drawn. These map types rely on external providers. They may not all be available at all times - over time, some map types may be discontinued, and new map types may be added.</p>
+        <p class="indent">Some of the map types (Azure Maps, Bing Maps, and Thunderforest maps) can be accessed only if you are logged in to your Microsoft account. Press "Account > Log in" in the home page to do so.</p>
+        <p class="indent">You can enable Stadia maps (Alidade Smooth, Alidade Smooth Dark, Outdoors, and Stamen Terrain) using your own account: go to <a href="https://stadiamaps.com/">stadiamaps.com</a>, sign up or log in, and obtain your API key under "Manage properties & authentication". Then, enter your API key in the TrackExplorer settings. Your Stadia account may be subject to charges for your usage within the app.</p>
+
+        <div class="image-gallery" id="mapTypesGallery">
+            <img src="Assets_help/Bing aerial.jpg" class="gallery-image active" alt="Bing Aerial">
+            <img src="Assets_help/Bing hybrid.jpg" class="gallery-image" alt="Bing Hybrid">
+            <img src="Assets_help/Bing road.jpg" class="gallery-image" alt="Bing Road">
+            <img src="Assets_help/Esri world physical.jpg" class="gallery-image" alt="Esri World Physical">
+            <img src="Assets_help/Esri world topographic.jpg" class="gallery-image" alt="Esri World Topographic">
+            <img src="Assets_help/OpenStreetMap.jpg" class="gallery-image" alt="OpenStreetMap">
+            <img src="Assets_help/Alidade.jpg" class="gallery-image" alt="Stadia Alidade Smooth">
+            <img src="Assets_help/Alidade dark.jpg" class="gallery-image" alt="Stadia Alidade Smooth Dark">
+            <img src="Assets_help/Stadia outdoors.jpg" class="gallery-image" alt="Stadia Outdoors">
+            <img src="Assets_help/Stamen terrain.jpg" class="gallery-image" alt="Stadia Stamen Terrain">
+            <img src="Assets_help/Atlas.jpg" class="gallery-image" alt="Thunderforest Atlas">
+            <img src="Assets_help/Landscape.jpg" class="gallery-image" alt="Thunderforest Landscape">
+            <img src="Assets_help/OpenCycleMap.jpg" class="gallery-image" alt="Thunderforest OpenCycleMap">
+            <img src="Assets_help/Outdoors.jpg" class="gallery-image" alt="Thunderforest Outdoors">
+            <div class="gallery-caption">
+                <span id="mapTypesCaption">Bing Aerial</span>
+            </div>
+            <div class="gallery-controls">
+                <button class="gallery-button" onclick="changeImage('mapTypesGallery', -1)">← Previous</button>
+                <span class="gallery-counter"><span id="mapTypesCurrent">1</span> / <span id="mapTypesTotal">14</span></span>
+                <button class="gallery-button" onclick="changeImage('mapTypesGallery', 1)">Next →</button>
+            </div>
+        </div>
+
+        <h4>Line thickness</h4>
+        <p class="indent">Thickness of the track line, expressed in pixels.</p>
+
+        <h4>Labels by</h4>
+        <p class="indent">Content of the label displayed on each track. Select None to hide the labels, otherwise select the data field that you are interested in.</p>
+
+        <h4>Color by</h4>
+        <p class="indent">Each track is drawn in a color representing the value of the selected data field.</p>
+
+        <h4>Color opacity</h4>
+        <p class="indent">Select the opacity of the track line, in decimal numbers from 0 (transparent) to 1 (fully opaque). This is useful when you have multiple overlapping tracks selected, and you want to display a heat map of the most travelled areas.</p>
+
+        <h4>Fixed color</h4>
+        <p class="indent">If Color by is Fixed, click on this rectangle to select the fixed color you want to use.</p>
+
+        <h4>Group by</h4>
+        <p class="indent">When the selected data field is either People or Tag, you have the additional option to group the colors by "Each combination" or "Specific item". The former will draw each combination of different tags or people in a different color. The latter will only use two colors - one for tracks that contain the selected specific item, one for all other tracks.<br/>
+        For example, suppose 3 tracks with the following tags, respectively: A and B; A and C; B and C. The "Each combination" option will draw all tracks in different colors, because each track has a different set of tags. The "Specific item" option, for example with A selected, will draw two tracks in one color (the ones that have tag A) and the other in a different color (the one that doesnt have A).</p>
+
+        <h4>Specific item</h4>
+        <p class="indent">If you selected Group by = Specific item, use this field to select the item in question.</p>
+
+        <h4>Invert the color of the latest track</h4>
+        <p class="indent">When this is checked, the most recent track will be highlighted by using the opposite color as the others (for example, cyan vs. red). This is useful if you did multiple tracks in the same area and you want to easily identify at a glance the last one you did.</p>
+
+        <h4>Arrange tracks</h4>
+        <p class="indent">With multiple overlapping tracks, by default the newest one is shown in front of the others. You can reverse this using the "Arrange tracks" toggle. Tracks with the same date are sorted by an internal identifier that keeps the sorting consistent when the order is reversed.</p>
+
+        <h4>Live drawing</h4>
+        <p class="indent">When this is checked, any option changes are immediately applied to the map. Otherwise, the changes are applied only after the Draw button is pressed. Turn live drawing off to improve performance when you have many tracks on the same map and you are tweaking multiple options.</p>
+
+        <h3>Show tracks</h3>
+        <p>When multiple tracks are selected, use this section to show (select) or hide (deselect) individual tracks. This is useful if some tracks are overlapping and you want to focus on one or more specific ones. Press the Show all button to quickly display all tracks again.</p>
+
+        <h3>Markers</h3>
+        <p>Use the sliders to mark the cumulative time or distance along each track. Press the Clear markers button to hide the marker labels.</p>
+
+        <h3>Photos</h3>
+        <p>If the track has a hero image associated with it, TrackExplorer will look through all the photos in the same folder and show them on the map, in the place where they were taken. Only files that contain GPS coordinates are included. The photo locations can be marked by pins or labels with the name of the image. You can select the size and color of the pin. Click on a label or pin to display a preview of the image.</p>
+        <p>The coordinates are read from each image file each time the Photos expander is opened. Depending on your PC's performance and the number of pictures for a track, this may take several minutes. To avoid this, you can set "Save photo coordinates for the Map page" to On in the Settings page. With this setting on, TrackExplorer will save the coordinates to a separate file, which will make the process faster after the first time. The coordinates are saved in a text file in the same folder as the hero image of each track. Changing the setting to Off will not delete these files, but they will be ignored.</p>
+
+        <h3>Share</h3>
+        <p>Use this button to save a copy of the map exactly as displayed on the screen, but without the tools menus. The image is saved in JPEG format with the same resolution as the screen where it's displayed. For best results, make sure that the window is on a larger screen.</p>
+
+        <h3>Examples</h3>
+        <p>Below are some examples of the map functionality:</p>
+
+        <div class="image-gallery" id="mapExamplesGallery">
+            <img src="Assets_help/Colors.jpg" class="gallery-image active" alt="Colors by track">
+            <img src="Assets_help/Heat map.jpg" class="gallery-image" alt="Heat map">
+            <img src="Assets_help/Last inverted.jpg" class="gallery-image" alt="Last inverted">
+            <img src="Assets_help/Labels.jpg" class="gallery-image" alt="Labels by gear">
+            <img src="Assets_help/Marker.jpg" class="gallery-image" alt="With markers">
+            <img src="Assets_help/Photo pins and preview.jpg" class="gallery-image" alt="Photo pins">
+            <div class="gallery-caption">
+                <span id="mapExamplesCaption">Multiple tracks with colors by track (each track in a different color)</span>
+            </div>
+            <div class="gallery-controls">
+                <button class="gallery-button" onclick="changeImage('mapExamplesGallery', -1)">← Previous</button>
+                <span class="gallery-counter"><span id="mapExamplesCurrent">1</span> / <span id="mapExamplesTotal">6</span></span>
+                <button class="gallery-button" onclick="changeImage('mapExamplesGallery', 1)">Next →</button>
+            </div>
+        </div>
+    </div>
+
+    <h2 onclick="toggleSection(this)">Sharing page <span class="badge badge-beta">BETA</span></h2>
+    <div class="section-content">
+        <p>Access this page with one or more tracks selected, to generate web pages for those tracks that you can share in various ways. This functionality is in beta, it is limited and may change in future releases. It also depends on external services which may become unavailable in the future.</p>
+
+        <p>You can share content in two formats:</p>
+
+        <h4>Single track page</h4>
+        <p>This page contains the hero image, name, date, location, description and the main track details for the first selected track. You can optionally also include additional details, the map, the elevation profile, the links, and the GPX file of that track.</p>
+
+        <h4>Multiple tracks page</h4>
+        <p>This page contains the hero images, names, and main track details for each track. You can optionally include a map and elevation profile.</p>
+
+        <p>For either format, you can publish the content in two ways:</p>
+
+        <h4>Locally on your PC</h4>
+        <p>The files are saved in a folder of your choice. You are free to upload them to your own website, or share them in any other way.</p>
+
+        <h4>Upload to Netlify <span class="badge badge-ext">EXT</span></h4>
+        <p>This requires a Netlify account; you can enter the account information in the settings page. After you upload a page to Netlify, you will get a link that you can easily share through Windows.</p>
+        <p>Whenever you deploy a web page to Netlify, the files are saved to a sync folder. The whole sync folder is synced every time - this includes not only the newly created page, but also all the older ones. The last section in the Sharing page allows you to view the list of pages in the sync folder, create links to them, delete them, and sync the whole folder with Netlify. When you delete files from the sync folder, the corresponding files will also be deleted from Netlify as soon as you publish a page or manually sync the folder. This functionality depends on external parties and may change or become unavailable in the future.</p>
+
+        <p>See the Technical information section for more details.</p>
+    </div>
+
+    <h2 onclick="toggleSection(this)">Collections page</h2>
+    <div class="section-content">
+        <p>Collections are a way to group together different tracks, for example if they have a common theme or if they relate to the same trip. You can create a collection and add tracks to it with the Collect button in the Tracks page, or in the Related tracks section of the Details page.</p>
+
+        <p>The Collections page can display a list of all collections, or just the ones that include the selected track(s). Use the toggle switch on the top right of the screen to control this.</p>
+
+        <p>On any collection, press the <strong>...</strong> button to access the following options:</p>
+        <ul>
+            <li><strong>Navigate to tracks</strong>: creates a temporary view for the collection and opens it in the Tracks page</li>
+            <li><strong>Rename</strong>: change the name of the collection</li>
+            <li><strong>Delete</strong>: deletes the collection (but not the tracks contained within it)</li>
+        </ul>
+    </div>
+
+    <h2 onclick="toggleSection(this)">History page</h2>
+    <div class="section-content">
+        <p>This page shows a bar chart with a measure of activity over time, based on the selected tracks. At least two tracks must be selected.</p>
+
+        <h3>Options</h3>
+
+        <h4>Y axis</h4>
+        <p class="indent">Select the measure of activity that you want to display: the total of Ascent, Count, Descent, Distance, Laps/runs or Time. Count refers to the number of tracks.</p>
+
+        <h4>X axis</h4>
+        <p class="indent">Select the level of detail for the summation: Day, Week, Month, Season, or Year. Each bar represents a single period of the selected length.</p>
+
+        <h4>Color by</h4>
+        <p class="indent">Each bar, or section of bar, is colored on the basis of the values of the selected field. You can select among Activity, Fixed, Gear, Location, People, Season, Tags, and Track.<br/>Fixed means that all bars have the same color, which you can select below. Track means that each track is displayed in a different color.</p>
+
+        <h4>Other options</h4>
+        <p class="indent">The other available options are self-explanatory: Fixed color (used when the Color by selection is set to Fixed), Background color, Distance/Elevation/Time intervals between grid lines, Gridline thickness, and Gridline color.</p>
+
+        <h3>Legend</h3>
+        <p>The legend shows the association between each color and its meaning, based on the selection made in Color by.</p>
+
+        <h3>Save image</h3>
+        <p>Use this button to save a copy of the chart exactly as displayed on the screen. The image is saved in JPEG format with the same resolution as the screen where it's displayed. For best results, make sure that the window is on a larger screen.</p>
+
+        <h3>Other features</h3>
+        <p>Right-click on any point in the chart to display some information for the tracks in that bar: the name, date, and the value of the selected measure of activity (time, distance, etc.)</p>
+
+        <h3>Example</h3>
+        <p>The chart below shows all skiing activities by month, with the total time on the Y axis, and colors by gear (in this case, each color is a different type of ski).</p>
+        <img src="Assets_help/History.jpg" class="image-alone" alt="Show time in the 3rd dimension">
+    </div>
+
+    <h2 onclick="toggleSection(this)">Planner page</h2>
+    <div class="section-content">
+        <h3>Overview</h3>
+        <p>The Planner page can be used to estimate the time needed for a planned track. The planned track can contain multiple GPX files, each representing a different section of the route, or different alternative routes. The estimation can be done with one of three methods: the Munter formula, the Naismith formula, or the TrackExplorer regression <span class="badge badge-beta">BETA</span>.</p>
+        <p>The Munter formula requires values for distance, ascent/descent and Munter rates for the planned track(s). Distance and ascent/descent come from the GPX file(s); Munter rates can be set manually, or estimated on the basis of similar tracks.<br/>
+The Naismith formula requires values for distance, ascent/descent, a base speed and penalties for uphill and downhill sections. The speed and penalties can be set manually, or estimated on the basis of similar tracks.<br/>
+The TrackExplorer regression requires values for distance and ascent/descent for the planned track(s), which come from the GPX file(s). The regression coefficients are estimated on the basis of similar tracks.</p>
+
+        <h4>Munter formula</h4>
+        <p class="indent">The Munter formula calculates the track time as follows: <strong>time [hrs] = ( distance [km] + ascent [m] / 100 ) / rate</strong>.<br/>Distance and ascent come from the GPX file. Rates can be set manually if you know what they should be (based on your experience), or they can be estimated by TrackExplorer based on reference tracks. The selected reference tracks should be as similar as possible to the planned ones.<br/>The rate represents the difficulty of the track - a low rate is associated with a difficult (slower) track, whereas a high rate is associated with an easier (faster) track. The calculation is performed separately (with different rates) for the uphill, downhill and flat sections.</p>
+
+        <h4>Naismith formula</h4>
+        <p class="indent">The Naismith formula calculates the track time as follows: <strong>time = (distance * base speed) + (ascent * ascent penalty) + (descent * descent penalty)</strong>. The descent penalty may be a positive or negative number; if negative, it's then a benefit instead of a penalty. Speed and penalties are expressed differently depending on the measurement system you are using:</p>
+        <p class="indent2">US standard system:<br/>
+            <strong>time [hrs] = (distance [mi] / 3 * base speed [hrs per 3 miles]) + (ascent [ft] / 2000 * ascent penalty [hrs per 2000']) + (descent [ft] / 2000 * descent penalty [hrs per 2000'])</strong><br/>
+The default values are: base speed = 1 hr per 3 miles; ascent penalty: 1 hr per 2000'; descent penalty: -0.5 hr per 2000'</p>
+        <p class="indent2">Metric system:<br/>
+            <strong>time [min] = (distance [km] * base speed [min per km]) + (ascent [m] / 10 * ascent penalty [min per 10m]) + (descent [m] / 10 * descent penalty [m per 10m])</strong><br/>
+The default values are: base speed: 12 min per km; ascent penalty: 10 min per 10m; descent penalty: -0.5 min per 10m
+        </p>
+        <p class="indent">Because the speeds and penalties are not exactly equivalent, using the US standard and Metric formulas won't yield exactly the same results. However, especially for hiking activities, they should generally be close enough. The advantage is that the numbers used are simple and easy to remember even while on the field.
+For the calculation, distance, ascent, and descent come from the GPX file.
+Speeds and penalties can be set manually if tou know what they should be (based on your experience), but TrackExplorer provides the defaults indicated above. Alternatively, they can be estimated by TrackExplorer based on refrence tracks. The selected reference tracks should be as similar as possible to the planned ones.</p>
+
+        <h4>TrackExplorer multiple regression <span class="badge badge-beta">BETA</span></h4>
+        <p class="indent">The multiple regression method calculates the track time as follows: <strong>time [hrs] = (uphill distance [km] * p1) + (downhill distance [km] * p2) + (flat distance [km] * p3) + (ascent [m] * p4) + (descent [m] * p5)</strong>. Distances, ascent and descent come from the GPX file. The regression coefficients p1, p2, p3, p4, and p5 can be estimated by TrackExplorer with a linear regression applied to the data from reference tracks. The calculation can't run with less than 5 reference tracks, but at least 50 are recommended.<br/>
+        The selected reference tracks should be as similar as possible to the planned ones. The regression parameters can't be set manually, unlike the Munter rates.</p>
+
+        <h3>Obtaining the time estimates</h3>
+        <p>To obtain the time estimates, follow the steps on the page. Note that some of the steps will be different depending on the estimation method you select.</p>
+
+        <h4>#1 - confirm the planned tracks data</h4>
+        <p>There is a list of the GPX files included in the plan.<br/>Depending on how the files were built, they may not have complete or accurate information (especially for ascent/descent). Update the missing or incorrect data.</p>
+
+        <h4>#2 - select the estimation method</h4>
+        <p>You can select the algorithm (Munter, Naismith, TrackExplorer regression), and the way the parameters are provided (manually, or estimated from reference tracks).</p>
+
+        <h4>#3 with manually entered parameters - enter the formula parameters</h4>
+        <p>Enter the parameters (rates or speed/penalties) for each planned track.</p>
+
+        <h4>#4 with manually entered parameters - get the time estimates</h4>
+        <p>See the summary of time estimates. Expand the Estimation notes section to review the parameters or errors.</p>
+
+        <h4>#3 with estimated parameters - select the planned tracks</h4>
+        <p>Select one or more planned tracks. Select more than one if you think that they all can be estimated with the same parameters. You can come back to this step multiple times and select different planned tracks.</p>
+
+        <h4>#4 with estimated parameters - select the reference tracks</h4>
+        <p>Select the reference tracks. Use the dropdown box at the top to use views to filter the list.<br/>
+The reference tracks should be similar to the planned track(s) you selected. You should select as many reference tracks as possible, but at least 3 are required for the Naismith formula, and 5 are required for the TrackExplorer regression. These minimum numbers are merely technical and do not imply that 3 and 5 are sufficient for a good estimate.</p>
+
+        <h4>#5 with estimated parameters - evaluate the quality of the reference tracks selection</h4>
+        <p>For each metric, you can see the minimum, maximum and average value for the reference tracks. These values are also displayed in the Range column as in the example below:</p>
+        <img src="Assets_help/EstimateRange.png" class="image-alone" alt="View the summary values">
+        <p>Here is how to interpret the graphical elements:</p>
+        <ul>
+            <li>Light blue shaded area: the range between minimum and maximum for the reference tracks</li>
+            <li>Blue line: the average for the reference tracks</li>
+            <li>Green dots: the values for the selected planned tracks</li>
+            <li>Orange dots: the values for the other planned tracks</li>
+        </ul>
+        <p>Examine these data carefully to assess whether the reference tracks that you selected are appropriate to estimate the planned tracks. For example, in the screenshot above you can see that the reference tracks are longer than any of the planned tracks. This might make sense if two of the planned tracks are not alternative routes, but different sections of the same overall route.<br/>
+TrackExplorer provides some warnings if the reference tracks appear to have values that are too disparate, but you must assess for yourself whether the reference tracks are appropriate</p>
+
+        <h4>#6 with estimated parameters - review the estimated rates or parameters</h4>
+        <p>The rates (Munter), speeds/penalties (Naismith) and coefficients (TrackExplorer regression) are displayed in a table for your reference.<br/>If any values are invalid (for example if the base speed is negative) it will be indicated here. In this case, select better reference tracks and start over.</p>
+
+        <h4>#7 with estimated parameters - get the time estimates</h4>
+        <p>See the summary of time estimates. Expand the Estimation notes section to review the parameters or errors.</p>
+
+        <div class="warning">
+            <strong>Warning:</strong> The quality of the estimation is only as good as your manual estimate of the Munter rates or Naismith speed and penalties, the data recorded in the reference tracks, and how appropriately you selected the reference tracks. All of these are subject to large uncertainty and errors. You must consider the results very conservatively.
+        </div>
+    </div>
+
+    <h2 onclick="toggleSection(this)">Compare tracks page</h2>
+    <div class="section-content">
+        <p>This page shows a table with all selected tracks and their performance data, such as distances, times, elevations, speeds, etc.</p>
+
+        <p>Double-click on a column header to sort by that column; double-click again to invert the sort order. When you select a row, it expands to show the non-numeric data, such as Activity, Description, etc. You can select multiple rows by holding the Control key while clicking on them. To deselect a row, hold the Control key while clicking on it again.</p>
+    </div>
+
+    <h2 onclick="toggleSection(this)">GPX data page</h2>
+    <div class="section-content">
+        <h3>Overview and general</h3>
+        <p>This page offers functionality to edit the GPX files for the first selected track. The available options are: View, File history, Trim, Combine, Adjust elevation, Delete ski lifts by distance, Delete ski lifts by elevation gain, and Adjust time outliers.</p>
+
+        <p>When you save the file after editing, it's recommended to save it with a different name, so you can always revert to the original one if needed. These tools allow you to choose whether to recalculate the performance data, or keep the original. Make the decision on the basis of the type of changes that you made, and whether they would lead to more accurate data or not.</p>
+
+        <h3>View</h3>
+        <p>Shows a list of all track segments in the file, with the sequence number, distance, duration and elevation gain, starting coordinates and starting date/time. You can filter the segments based on distance, duration, elevation and elevation gain. You can also sort the segments based on the same fields, or the sequence.</p>
+
+        <h3>File history</h3>
+        <p>Shows all the operations performed by TrackExplorer to the GPX file. This includes the type of operation and the values of the parameters used. Operations performed by other tools are not shown, unless they use the same standard to record the data. This data in the file may not be readable by other tools.</p>
+
+        <h3>Trim</h3>
+        <p>Identify a specific point in the tracks, then delete all points either before or after the selected point. When you save, you can choose to recalculate all performance data based on the updated file.</p>
+
+        <h3>Combine</h3>
+        <p>Combine the GPX file of the selected track with a new one. There are two operations available: Join and Blend.</p>
+
+        <h4>Join</h4>
+        <p class="indent">This operation connects the tracks one after the other. For example, the activity may have been interrupted overnight, you ended up with separate tracks and you want to put them back together. TrackExplorer can determine the correct order of the tracks based on the date/time of each, or you can manually select to place the new track before or after the original. You can also manually set the time elapsed between the end of the first track and the beginning of the second.</p>
+
+        <h4>Blend</h4>
+        <p class="indent">This operation matches the two tracks by time, and calculates the average coordinates and elevation at each point in time. The average of the two tracks may be more accurate than one of them, the effect of random errors may be reduced, and the resulting map and profile may be smoother. The requirement is that the two tracks must have consistent locations and times (i.e. they must have been recorded by devices that were in the same places at the same times).<br/>
+        If one or both of the files contain multiple <trk> sections (for example if the "Delete ski lifts by distance" function was previously applied), they will be combined into a single &lt;trk&gt; in the averaged file. In this scenario it would be preferable to apply the average before deleting the ski lifts.
+See an example below:
+</p>
+
+        <div class="image-gallery" id="blendGallery">
+            <img src="Assets_help/Map.jpg" class="gallery-image active" alt="Blend map example">
+            <img src="Assets_help/Profile.jpg" class="gallery-image" alt="Blend profile example">
+            <div class="gallery-caption">
+                <span id="blendCaption">A section of two tracks recorded by different devices (one red and one blue), and the averaged track (green).</span>
+            </div>
+            <div class="gallery-controls">
+                <button class="gallery-button" onclick="changeImage('blendGallery', -1)">← Previous</button>
+                <span class="gallery-counter"><span id="blendCurrent">1</span> / <span id="blendTotal">2</span></span>
+                <button class="gallery-button" onclick="changeImage('blendGallery', 1)">Next →</button>
+            </div>
+        </div>
+
+        <h3>Adjust elevation</h3>
+        <p>The elevation data from the GPS device may sometimes be noisy or otherwise inaccurate, which leads to a misestimation of the values for ascent, descent, uphill time and distance, downhill time and distance and flat time and distance. There are several methods available to adjust the elevation values. Each method may be appropriate for different circumstances:</p>
+        <ul>
+            <li><strong>Decimation</strong>: simply removes a set proportion of the elevation points</li>
+            <li><strong>Known values</strong>: recalculates the elevations based on otherwise known elevation values for the particular track</li>
+            <li><strong>Local replacement with interpolation</strong>: replaces elevation values in a specific segment of the track</li>
+            <li><strong>Moving average</strong>: replaces the original elevations with the moving average of the previous ones</li>
+            <li><strong>Savitzky-Golay filter</strong>: similar to the previous, replaces the original elevations with an interpolation of the previous ones</li>
+            <li><strong>Threshold</strong>: eliminates elevation changes beyond a certain threshold</li>
+            <li><strong>USGS data</strong> <span class="badge badge-ext">EXT</span>: replaces elevation values with data obtained from the USGS. The availability of this service may change in time.</li>
+        </ul>
+
+        <h4>Decimation</h4>
+        <p>Preserves the elevation data for the specified fraction of the coordinate points. The elevations of the other points are replaced with linearly interpolated values.<br/>Consider this method if the elevation data is too jittery.<br/>For example, a factor of 3 means that 1/3 of the elevations will be preserved.</p>
+
+        <h4>Known values</h4>
+        <p>Recalculates all elevation data based on known values (start and end elevation, high or low elevation, ascent and descent).<br/>The calculation is performed separately on the first part of the track (from the start to the first low/high point) and the second (from the first low/high point to the end).<br/>The new values are calculated such that the following constraints are always respected:</p>
+        <ul>
+            <li>Start elevation + Ascent - Descent - End elevation = 0</li>
+            <li>The relative size of the elevation difference between points is preserved from the original file</li>
+        </ul>
+        <p>Consider this method if you have valid known values for the relevant points and you want to preserve from the original file the relative changes in between.<br/>Depending on the general shape of the track, only the high or low elevation is required. If the track goes up and then down (e.g. a hike up a mountain), the high elevation is required. If the track goes down and then up (e.g. a hike down a canyon), the low elevation is required.<br/>The known start/end/high/low elevation values can be entered manually or retrieved from the USGS (this is an external service that may not continue to be available). The known ascent/descent values must be entered manually.</p>
+
+        <h4>Local replacement with interpolation</h4>
+        <p>Adjusts the elevation of the points within the selected window. The new elevations are calculated by interpolating the elevations of the first and last points within the window.<br/>
+Two types of interpolation are available: Polynomial and Constant slope. The latter simply calculates the slope between the average elevation of the first points and the average elevation of the last ones. The result using the Constant slope interpolation will generally be very similar to that of the Polynomial interpolation with order 1.<br/>
+Consider this method if only partial segments of the track have poor quality data, perhaps due to equipment malfunction or environmental adverse conditions such as wind affecting the sensor.<br/>
+To select the window, specify the starting point and the width using the sliders or entering values in the respective fields (the values are expressed in pixels as displayed in the chart on the right). The selected window is highlighted in the elevation chart.<br/>
+Use the Interpolation type toggle to switch between Polynomial and Constant slope.<br/>
+Use the Reference points number box to specify the number of points (at the beginning and end of the window) used for the interpolation.<br/>
+For Polynomial interpolation, enter the order in the Polynomial order number box. The order must be between 0 and 3.<br/>
+If you want to correct multiple segments of the track, set the window and other parameters, click the Apply & keep button, then move the window and repeat as many times as needed. Use the Apply once button for a single correction.</p>
+
+        <h4>Moving average</h4>
+        <p>Replaces each point's elevation with the average of the elevations from the given number of previous and successive points.<br/>Consider this method if you want to smooth out any spikes.<br/>For example, a setting of 4 points means that each point's elevation will be replaced by the average of the elevations of the previous 4 and successive 4 points: 8 in total.</p>
+
+        <h4>Savitzky-Golay filter</h4>
+        <p>Replaces each point's elevation with an interpolation of the elevations from the given number of previous and successive points.<br/>The interpolation is based on a polynomial regression of the indicated order.<br/>Consider this method if you want to smooth out any spikes.<br/>For example, a window size of 4 points with a polynomial order of 3 means that for each point in the curve, a polynomial function of order 3 will be fit to the segment starting 4 points before and ending 4 points after each point (9 points total). The coefficients of this function will then be used to recalculate the point's elevation.<br/>The maximum supprted order is 3.</p>
+
+        <h4>Threshold filter</h4>
+        <p>Eliminates the elevation changes between successive points that are smaller than the given threshold.<br/>Consider this method if you see large elevation changes that are spurious.<br/>For example, if you set the threshold to 5, any elevation change larger than 5 will be replaced by 5.</p>
+
+        <h4>USGS data <span class="badge badge-ext">EXT</span></h4>
+        <p>Divides the track in the specified number of segments. For each segment, the original elevations of 3 consecutive points in the middle are compared to the USGS elevations of the same 3 points, calculating an adjustment ratio (USGS elevation / original elevation).<br/>
+The same adjustment ratio is then applied to all points in that segment.<br/>
+The USGS elevations are retrieved using the Elevation Point Query Service by the USGS (United States Geological Survey).<br/>
+You can find more information about the Elevation Point Query Service at <a href="https://apps.nationalmap.gov/epqs/">https://apps.nationalmap.gov/epqs/</a>". This is an external service that may not continue to be available.<br/>
+Consider this method if the relative elevation changes are correct, but the overall profile is off.<br/>
+For example, if the original elevation is 2000 and the USGS elevation is 2100, the ratio is 1.05. The elevation of all points in the segment is multiplied by 1.05.<br/>
+This function requires Internet connectivity and is limited to a maximum of 10 segments. The processing time for each point is 10 seconds or more. If the elevation of a point can't be retrieved, that point is ignored.</p>
+
+        <h4>Reviewing elevation changes</h4>
+        <p>The table on the left and the chart on the right show the original data in red, and the adjusted data in blue.<br/>
+After one of the adjustment methods has been applied, compare the red and blue data to see if the results are satisfactory.<br/>
+The performance values will be recalculated based on the adjusted data. In some cases, you may want to save the original value. The last column in the table allows you to decide if you want to save the original or adjusted value.<br/>
+When you save the file, you may check the Data is verified box if you think that the data is now accurate.</p>
+
+        <h4>Example</h4>
+        <p>In this example, the track has been adjusted with the default settings of the Savitzky-Golay filter. The elevation profile has been smoothed, and as a result, some of the performance values have changed substantially. The user has the option to save the original values or the adjusted ones.</p>
+        <img src="Assets_help/adjust.png" class="image-alone" alt="Adjusting the elevation">
+
+        <h3>Delete ski lifts by distance</h3>
+        <p>Some GPS devices recognize when you are riding a ski lift and will only record the first and last point of the ride. This results in long, straight segments, as illustrated in the examples below:</p>
+
+        <div class="image-gallery" id="skiLiftsGallery">
+            <img src="Assets_help/Bad.jpg" class="gallery-image active" alt="Before removing ski lifts">
+            <img src="Assets_help/Good.jpg" class="gallery-image" alt="After removing ski lifts">
+            <img src="Assets_help/Bad2.jpg" class="gallery-image" alt="Before removing ski lifts - example 2">
+            <img src="Assets_help/Good2.jpg" class="gallery-image" alt="After removing ski lifts - example 2">
+            <div class="gallery-caption">
+                <span id="skiLiftsCaption">This is a partial view of 23 unmodified tracks exported from a GPS device. The lift ride sections overlap each other and the tracks, and make it hard to see clearly all the tracks. The total distance is 920 miles (includes the lift rides).</span>
+            </div>
+            <div class="gallery-controls">
+                <button class="gallery-button" onclick="changeImage('skiLiftsGallery', -1)">← Previous</button>
+                <span class="gallery-counter"><span id="skiLiftsCurrent">1</span> / <span id="skiLiftsTotal">4</span></span>
+                <button class="gallery-button" onclick="changeImage('skiLiftsGallery', 1)">Next →</button>
+            </div>
+        </div>
+
+        <p>In these cases it may be preferable to hide these sections, and not include them in the calculations for the performance data.<br/>You can use this tool to identify and delete these very long segments.</p>
+        <p>First, use the slider to identify the most likely candidates. In the example below, you can clearly see that 16 segments are much longer than the others. They are likely to be what we are looking for. Use the slider to set a threshold that will isolate them (roughly 2,500 feet).</p>
+        <img src="Assets_help/step 1.gif" class="image-alone" alt="Find outliers">
+
+        <p>The 16 segments are now listed below. Select each of them to confirm that they are lift rides - you can establish that looking at the map, the elevation gain and the duration.</p>
+        <img src="Assets_help/step 2.gif" class="image-alone" alt="Confirm outliers">
+
+        <p>Select the segments that you want to delete and confirm.</p>
+
+        <p>Check the "Collapse times" checkbox to zero out the elapsed times of the deleted segments. This affects how the track is displayed in the Profiles page:<br/>The red line is the profile of the original track; the blue line is the same track with distance outliers deleted and times collapsed. The chart shows elevation by time. In the adjusted track, the time elapsed during the deleted segments has been removed. In the original, it's still visible.</p>
+        <img src="Assets_help/profiles.jpg" class="image-alone" alt="View the changes in the profile">
+        <p>Check the "Update number of runs" checkbox to update the "Laps/runs" field with the number of segments obtained after deleting the selected segments.</p>
+
+        <h3>Delete ski lifts by elevation gain</h3>
+        <p>Other GPS devices keep saving track points even while riding a ski lift. If you still want to be able to remove these sections, you can use this tool. You can identify the correct sections using three parameters:</p>
+        <ul>
+            <li>Minimum uphill distance</li>
+            <li>Minimum ascent</li>
+            <li>Maximum downhill distance</li>
+        </ul>
+        <p>TrackExplorer goes through all the points in the track and keeps count of the cumulated uphill distance and ascent, and downhill distance; as soon as both minimums are reached, without passing the maximum, it flags the corresponding points. Once the maximum is hot, it starts over.</p>
+        <p>The sections that were identified are displayed in the table and when selected can be viewed in the map. Confirm which sections you want to delete and select them.</p>
+        <img src="Assets_help/byelevation.png" class="image-alone" alt="Confirm ski lift segments">
+        <p>Check the "Update number of runs" checkbox to update the "Laps/runs" field with the number of segments obtained after deleting the selected sections.</p>
+
+        <h3>Adjust time outliers</h3>
+        <p>This tool allows you to delete any long breaks found in the track.</p>
+        <p>The table shows a list of points, sorted by duration. Select the ones that you want to edit, and enter the new duration that you want to apply - the new duration may be 0. All the selected points will be updated accordingly.</p>
+    </div>
+
+    <h2 onclick="toggleSection(this)">Edit tracks page</h2>
+    <div class="section-content">
+        <p>This page allows you to mass update some of the data on multiple tracks at the same time (all selected tracks). This is much faster than editing tracks one by one. It's recommended to run a backup before using these tools. The Operation result box at the bottom of the page tells you how many tracks were successfully updated.</p>
+
+        <h3>Update text fields</h3>
+        <p>Select the text field that you want to update, and enter the update command. There are commands available to: append text at the end, insert text at the beginning, remove text, replace text, overwrite the field, and clear the field.<br/>You can optionally test the command on a specific track. Do this to make sure that the command will behave as expected. When you are ready, press the Update button to update all selected tracks.</p>
+
+        <h3>Recalculate performance data fields from the GPX file</h3>
+        <p>Use this if any of the performance values have been manually updated incorrectly and you want to refresh them. Select the field(s) that you want to recalculate, and choose if and how you want to reset the Data is verified box; then press the Recalculate button. TrackExplorer reads all GPX files for all selected tracks and updates the performance data accordingly.</p>
+
+        <h3>Convert images</h3>
+        <p>HEIC images may present performance issues on some PCs. If you are facing this problem, and you have multiple hero images in HEIC format, this can negatively affect your experience in the Tracks page. Use this tool to convert all hero images for the selected tracks from HEIC to JPEG. You can optionally delete the original files.</p>
+    </div>
+
+    <h2 onclick="toggleSection(this)">Views page</h2>
+    <div class="section-content">
+        <h3>Overview</h3>
+        <p>Views are a way to dynamically define a set of tracks that will be displayed on the Tracks page. They consist of filters that can be applied to any of the track fields, plus additional options that control how the tracks are displayed in the Tracks, Map and Profiles pages.</p>
+
+        <p>When you open the page, select whether you want to create a new view or edit an existing one. When you create a new view, enter the name first. In the name you can use slashes ( / ) to create a folder structure for your views. When you look for views in the Tracks page, they are shown in a tree following this folder structure. Each criterion is enabled by a checkbox; you can enter values without ticking the checkbox, but in that case the criterion will not be applied. The view returns all tracks that match all of the enabled criteria. In other words, there is a logical AND operation applied to all criteria. For more complex logic, you can use combined views.</p>
+
+        <h3>Filters</h3>
+        <p>Filters are grouped in the following sections: by attribute (using track status, availability of GPS and elevation data, availability of image), by group (using activity, gear, location, people, collection and tag), by date (date range, recent dates, season), by performance (any range of values for most of the performance fields), by text (against all fields, or name, or description), by custom fields, and specific tracks (you can create the view to include specific tracks without having to enter any other criteria).</p>
+
+        <p>When filtering by activity, gear, and location, you can specify individual values or any text.<br/>
+            For groups that can be defined in a folder structure (location and gear), you can set the filter for a specific item, or for a full folder. For example, say that you have three tracks with the following location paths: "Italy/North/Dolomites", "Italy/North/Valtellina" and "Italy/North/Val d'Aosta"; if you create a filter selectiing the partial location path "Italy/North/", this filter will match all three tracks.</p>
+        
+        <p>When filtering by date, you can specify a date range and make it valid for a specific year or for any year.<br/>You can also select the last arbitrary number of days, weeks, months, seasons, ski seasons, or years starting from the current date.</p>
+        <p>When filtering by numerical fields, leave the "to" value set to 0 to have no upper bound, and leave the "from" value set to 0 to have no lower bound.</p>
+        <p>When filtering by name or description, you have the option to match the full text, the start, the end, or any part of the text.</p>
+
+        <h3>Options</h3>
+        <p>The options are used when you have a view selected in the Tracks page, to control the way the app behaves:</p>
+        <ul>
+            <li>in the Tracks (Home) page itself (select the tracks, image size, and colors; you can also set the view as default)</li>
+            <li>navigating to the Profiles page (chart type, elevation display, etc.)</li>
+            <li>navigating to the Map page (map type, colors, etc.)</li>
+            <li>navigating to the History page (Y axis, X axis, colors, etc.)</li>
+        </ul>
+
+        <h3>Sort</h3>
+        <p>Select the field and direction for sorting the tracks.</p>
+
+        <h3>Combined views</h3>
+        <p>You can combine the current view with one or more other views, as follows:</p>
+        <ul>
+            <li>apply intersection (find tracks that match the current view and also all other selected views)</li>
+            <li>apply union (find tracks that match the current view or any of the other selected views)</li>
+            <li>apply subtraction (find tracks that match the current view but do not match any of the other selected views)</li>
+        </ul>
+        <p>For example:<br/>
+If you have a view for Hiking activities and a view for Cycling activities and you apply the Union combination, the result will include both hiking and cycling tracks.<br/>
+If you have a view for Hiking activities and a view for the state of Colorado and you apply the Intersection combination, the result will include only hiking activities in Colorado (no hiking in other states or cycling in Colorado).<br/>
+If you have a view for slow activities and you apply it with the Subtraction combination to the Hiking view, the result will include only hiking activies that were not slow.<br/>
+You can apply multiple combinations at the same time: for example, Intersection of hiking and Colorado, Union of biking, and Subtraction of slow activities: the result will include activities in Colorado and cycling activities anywhere that were not slow.</p>
+
+        <h3>Buttons</h3>
+        <ul>
+            <li><strong>Delete</strong>: in edit mode, deletes the selected view</li>
+            <li><strong>Save</strong>: in create mode, saves the new view; in edit mode, saves the changes to the existing view</li>
+            <li><strong>Save as new</strong>: in edit mode, saves the selected view as a new one</li>
+            <li><strong>Apply</strong>: opens the view in the Home page, whether it was first saved or not</li>
+        </ul>
+    </div>
+
+    <h2 onclick="toggleSection(this)">Technical information</h2>
+    <div class="section-content">
+        <h3>Backups and the main TrackExplorer files</h3>
+        <p>From the Settings page, you can back up the data on the fly, schedule an automatic recurring backup, and restore data from a previous backup. The files and folders that are saved in the backup include:</p>
+        <ul>
+            <li>TrackExplorerData.txt (contains all track data)</li>
+            <li>TrackExplorerFilters.txt (contains all saved views data)</li>
+            <li>TrackExplorerLinks.txt (contains the links associated to each track)</li>
+            <li>TrackExplorerRelations.txt (contains information about track collections)</li>
+            <li>TrackExplorerSettings.txt (contains the settings for the custom fields)</li>
+            <li>HeroImages folder (contains the hero images created from the tracks' maps)</li>
+        </ul>
+
+        <p>When the files are backed up, the "txt" extensions are replaced by "bak".<br/>You should never edit these files manually, as they are likely to become corrupt. However, you may back them up yourself and replace them if needed (before opening the app).<br/>Note that the backup process does not save any of the demo files, even if they have been modified.</p>
+
+        <h3>GPX extensions</h3>
+        <p>TrackExplorer reads and writes standard GPX files with TrackExplorer extensions, but does not read or save other extensions (such as, for example, heart rate information). The TrackExplorer GPX extensions are:</p>
+        <ul>
+            <li>Within GPX / metadata: history tag, containing a list of record, each with a sequence attribute and containing operation and parameters</li>
+            <li>Within GPX / trk / trkseg / trkpt: elapsed tag, containing a timespan object. This represents the elapsed time from the beginning of the track and it's updated when you modify the file to compress times (for example in the Delete ski lifts tools or the Adjust time outliers tool). This allows for the preservation of the original date/time data while supporting the compressed times.</li>
+        </ul>
+
+        <h3>Sharing <span class="badge badge-beta">BETA</span></h3>
+
+        <h4>Web pages</h4>
+        <p>Each page consists of the following:</p>
+        <ul>
+            <li>one html file with a user-selected name and the extension ".htm"</li>
+            <li>one folder with the same name and the suffix "-img". This folder contains all image files needed for the page (at full resolution), various image files used for the favicon, and the track's GPX file (if you chose to include it).</li>
+        </ul>
+
+        <h4>Netlify <span class="badge badge-ext">EXT</span></h4>
+        <p>When you publish a page to Netlify, the files are saved in a folder called Publish inside your TrackExplorer main folder before they are uploaded to Netlify. This is a mirror of your Netlify site. Every time you publish a new page, or manually select the Sync option in the Sharing page, all files within the Publish folder are deployed to Netlify. Only the new, deleted or edited files are actually updated, but it's important to note that ALL files in that folder will be synced - not only the ones related to the last created page.</p>
+
+        <h3>Units of measure</h3>
+        <p>When you save a track, the performance data will be saved in the file using the units (USCS or Metric) selected for display at that point in time.<br/> 
+For example: you create a track with Metric selected - the distance is saved in Km. You then switch to USCS and edit/save the track: the distance is now saved in Mi.<br/> 
+This only affects the data file: regardless of the unit used when saving the file, all data is always shown in the unit selected for display.</p>
+    </div>
+
+    <h2 onclick="toggleSection(this)">About TrackExplorer</h2>
+    <div class="section-content">
+        <h3>TrackExplorer 1.0</h3>
+        <p>TrackExplorer allows you to collect, organize, display, analyze, compare and plan your activities based on GPX files.</p>
+        <p>TrackExplorer &copy; 2021-2026 Giordano Biondani</p>
+        <a href="https://giobiondani.github.io/TrackExplorerInfo/Privacy.html">Privacy statement</a>
+
+        <h3>Enjoying TrackExplorer? ❤️</h3>
+        <p>It’s completely free. If you like it, consider supporting future development:</p>
+        <h4 class="indent">Sponsor on GitHub</h4>
+        <a class="indent" href="https://github.com/sponsors/giobiondani"><img src="Assets_help/github-sponsors-EA4AAA.png" alt="Github Sponsors logo"></a>
+        <h4 class="indent">Buy me a coffee</h4>
+        <a class="indent" href="https://buymeacoffee.com/giobiondani"><img src="Assets_help/bmc-button.png" width="115px" alt="Buy me a coffee logo"></a>
+        <h4 class="indent">Or donate via <a href="https://paypal.me/giobiondani">PayPal</a></h4>
+
+        <h3>External services</h3>
+        <a class="indent" href="https://www.microsoft.com/licensing/terms/welcome/welcomepage">Azure Maps terms of use</a>
+
+        <h3>Third-party software notices and information</h3>
+        <p>This application ("TrackExplorer") incorporates open-source software components developed by third parties.<br/>
+Below is a list of these components, their licenses, and associated copyright notices.<br/>
+We gratefully acknowledge the work of these developers.<br/>
+The full license texts are included or linked where practical. For brevity, common permissive licenses (MIT, Apache 2.0) are summarized with their standard terms</p>
+
+        <h4>Top-level packages</h4>
+
+        <h3 class="indent">CommunityToolkit.Mvvm (8.4.0)</h3>
+        <p class="indent2">License: MIT License<br/>
+            Copyright: © .NET Foundation and Contributors<br>
+            Repository: <a href="https://github.com/CommunityToolkit/dotnet">https://github.com/CommunityToolkit/dotnet</a><br/>
+            Full license: <a href="https://github.com/CommunityToolkit/dotnet/blob/main/License.md">https://github.com/CommunityToolkit/dotnet/blob/main/License.md</a>
+        </p>
+
+        <h3 class="indent">CommunityToolkit.WinUI.Controls.* (HeaderedControls, Primitives, SettingsControls, TokenizingTextBox) (8.2.251219)</h3>
+        <p class="indent2">License: MIT License<br/>
+            Copyright: © .NET Foundation and Contributors<br>
+            Repository: <a href="https://github.com/CommunityToolkit/Windows">https://github.com/CommunityToolkit/Windows</a>
+        </p>
+
+        <h3 class="indent">CommunityToolkit.WinUI.UI.Controls.DataGrid (7.1.2)</h3>
+        <p class="indent2">License: MIT License<br/>
+            Copyright: © .NET Foundation and Contributors
+        </p>
+
+        <h3 class="indent">Magick.NET-Q8-AnyCPU (14.10.1)</h3>
+        <p class="indent2">License: Apache License 2.0<br/>
+            Copyright: © Dirk Lemstra and contributors<br>
+            Repository: <a href="https://github.com/dlemstra/Magick.NET">https://github.com/dlemstra/Magick.NET</a><br/>
+            Full license: <a href="https://github.com/dlemstra/Magick.NET/blob/main/License.txt">https://github.com/dlemstra/Magick.NET/blob/main/License.txt</a>
+        </p>
+
+        <h3 class="indent">Mapsui.WinUI (5.0.2) (and transitive: Mapsui, Mapsui.Nts, Mapsui.Rendering.Skia, Mapsui.Tiling, BruTile)</h3>
+        <p class="indent2">License: MIT License<br/>
+            Copyright: © Mapsui Contributors<br>
+            Repository: <a href="https://github.com/Mapsui/Mapsui">https://github.com/Mapsui/Mapsui</a><br/>
+            Full license: <a href="https://github.com/Mapsui/Mapsui/blob/main/LICENSE">https://github.com/Mapsui/Mapsui/blob/main/LICENSE</a>
+        </p>
+
+        <h3 class="indent">MathNet.Numerics (5.0.0)</h3>
+        <p class="indent2">License: MIT License<br/>
+            Copyright: © Math.NET<br>
+            Repository: <a href="https://github.com/mathnet/mathnet-numerics">https://github.com/mathnet/mathnet-numerics</a>
+        </p>
+
+        <h3 class="indent">Microsoft.Extensions.Hosting (10.0.2) (and related Microsoft.Extensions.* packages)</h3>
+        <p class="indent2">License: MIT License<br/>
+            Copyright: © .NET Foundation and Contributors / Microsoft Corporation
+        </p>
+
+        <h3 class="indent">Microsoft.Identity.Client (4.81.0) family</h3>
+        <p class="indent2">License: MIT License<br/>
+            Copyright: © Microsoft Corporation<br>
+            Repository: <a href="https://github.com/AzureAD/microsoft-authentication-library-for-dotnet">https://github.com/AzureAD/microsoft-authentication-library-for-dotnet</a>
+        </p>
+
+        <h3 class="indent">Microsoft.WindowsAppSDK (1.8.260101001)</h3>
+        <p class="indent2">License: MIT License (for WinUI components) + Microsoft terms<br/>
+            Copyright: © Microsoft Corporation<br>
+            Repository: <a href="https://github.com/microsoft/WindowsAppSDK">https://github.com/microsoft/WindowsAppSDK</a><br/>
+            Full license: <a href="https://github.com/microsoft/WindowsAppSDK/blob/main/LICENSE">https://github.com/microsoft/WindowsAppSDK/blob/main/LICENSE</a>
+        </p>
+
+        <h3 class="indent">Microsoft.Xaml.Behaviors.WinUI.Managed (3.0.0)</h3>
+        <p class="indent2">License: MIT License<br/>
+            Copyright: © Microsoft Corporation
+        </p>
+
+        <h3 class="indent">Newtonsoft.Json (13.0.4)</h3>
+        <p class="indent2">License: MIT License<br/>
+            Copyright: © James Newton-King<br>
+            Repository: <a href="https://github.com/JamesNK/Newtonsoft.Json">https://github.com/JamesNK/Newtonsoft.Json</a>
+        </p>
+
+        <h3 class="indent">System.Drawing.Common (10.0.2)</h3>
+        <p class="indent2">License: MIT License<br/>
+            Copyright: © .NET Foundation and Contributors
+        </p>
+
+        <h4>Other notable transitive dependencies</h4>
+        <ul>
+            <li>SkiaSharp (3.119.1) family — MIT License, © Microsoft Corporation / Mono contributors</li>
+            <li>NetTopologySuite (2.6.0) — LGPL 2.1, © NetTopologySuite Contributors</li>
+            <li>BruTile (6.0.0) — Apache License 2.0, © Felix Obermaier and contributors</li>
+        </ul>
+
+        <h4>MIT license summary</h4>
+        <p>Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+</p>
+<p>The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.</p>
+<p>THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.</p>
+
+    <h4>Apache License 2.0 Summary</h4>
+    <p>A permissive license requiring preservation of copyright/license notices and any NOTICE file. Includes patent grant. See linked repositories for full text.</p>
+
+    <p>If any component is missing or a notice needs updating, please contact the developer.<br/>
+Generated for TrackExplorer — © Giordano Biondani</p>
+    </div>
+
+    <div class="footer">
+        &copy; 2026 Giordano Biondani. All rights reserved.
+    </div>
+
+    <script>
+        const galleryData = {
+            'profilesGallery': {
+                captions: [
+                    'Absolute from 0: the chart starts at elevation 0 and each track is displayed at its actual elevation',
+                    'Absolute from lowest point: the chart starts a little below 4000\', which is the lowest elevation of the blue track; each track is displayed at its actual elevation. The elevation details are more visible.',
+                    'Relative: the chart starts at 0, and all tracks start at 0 as well. The chart makes it easier to compare the profiles of each track independent of the starting elevation.'
+                ]
+            },
+            'mapTypesGallery': {
+                captions: [
+                    'Bing Aerial',
+                    'Bing Hybrid',
+                    'Bing Road',
+                    'Esri World Physical (low resolution, best for overviews of large areas)',
+                    'Esri World Topographic',
+                    'OpenStreetMap',
+                    'Stadia Alidade Smooth',
+                    'Stadia Alidade Smooth Dark',
+                    'Stadia Outdoors',
+                    'Stadia Stamen Terrain (lower resolution, best for lower zoom levels)',
+                    'Thunderforest Atlas',
+                    'Thunderforest Landscape',
+                    'Thunderforest OpenCycleMap',
+                    'Thunderforest Outdoors'
+                ]
+            },
+            'mapExamplesGallery': {
+                captions: [
+                    'Multiple tracks with colors by track (each track in a different color)',
+                    'A heat map obtained by displaying multiple tracks in the same color, with opacity = 0.15',
+                    'Multiple tracks in the same color (red), but the last one is inverted (cyan)',
+                    'Multiple tracks with colors and labels by gear (the color and label for each track are based on the value of the Gear field)',
+                    'A single track with a time marker at 55 minutes and a distance marker at 1 mile',
+                    'Photo pins displayed on the locations of photos in the hero image folder. One pin has been clicked to display a preview of the image.'
+                ]
+            },
+            'blendGallery': {
+                captions: [
+                    'A section of two tracks recorded by different devices (one red and one blue), and the averaged track (green).',
+                    'The profile (elevation by time) of the same two tracks (red and blue) and their average (green).'
+                ]
+            },
+            'skiLiftsGallery': {
+                captions: [
+                    'This is a partial view of 23 unmodified tracks exported from a GPS device. The lift ride sections overlap each other and the tracks, and make it hard to see clearly all the tracks. The total distance is 920 miles (includes the lift rides).',
+                    'The lift rides have been removed. Each track is clearly visible. The total distance is now 586 miles (only the skiing distance is included).',
+                    'In this example, the lift rides don\'t all end in the right place (due to normal inaccuracies of the GPS device). This makes the map even messier.',
+                    'With the lift rides removed, the map is much clearer.'
+                ]
+            }
+        };
+
+        function changeImage(galleryId, direction) {
+            const gallery = document.getElementById(galleryId);
+            const images = gallery.querySelectorAll('.gallery-image');
+            const currentIndex = Array.from(images).findIndex(img => img.classList.contains('active'));
+            const newIndex = (currentIndex + direction + images.length) % images.length;
+            
+            images[currentIndex].classList.remove('active');
+            images[newIndex].classList.add('active');
+            
+            // Update caption
+            const galleryName = galleryId;
+            const captionId = galleryId.replace('Gallery', 'Caption');
+            const currentId = galleryId.replace('Gallery', 'Current');
+            
+            document.getElementById(captionId).textContent = galleryData[galleryName].captions[newIndex];
+            document.getElementById(currentId).textContent = newIndex + 1;
+        }
+
+        function toggleSection(header) {
+            const content = header.nextElementSibling;
+            content.classList.toggle('active');
+        }
+
+        // Open first section by default
+        document.addEventListener('DOMContentLoaded', function() {
+            const firstSection = document.querySelector('.section-content');
+            if (firstSection) {
+                firstSection.classList.add('active');
+            }
+        });
+    </script>
+</body>
+</html>
