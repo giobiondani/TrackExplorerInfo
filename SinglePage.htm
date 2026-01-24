@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="icon" href="SinglePage-img/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="SinglePage-img/favicon-32x32.png" sizes="32x32" type="image/png">
+    <link rel="icon" href="SinglePage-img/favicon-16x16.png" sizes="16x16" type="image/png">
+    <title>Keystone 12/28/25</title>
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: 'Segoe UI', Arial, Helvetica, sans-serif; line-height: 1.6; color: #333; background-color: #f5f7fa; }
+        .hero { position: relative; height: 80vh; min-height: 500px; overflow: hidden; }
+        .hero-image { width: 100%; height: 100%; object-fit: cover; filter: brightness(0.85); }
+        .hero-overlay { position: absolute; bottom: 0; left: 0; width: 100%; padding: 40px 60px; background: linear-gradient(to top, rgba(0,0,0,0.7), transparent); color: white; }
+        .hero-title { font-size: 3rem; font-weight: 600; margin-bottom: 8px; }
+        .hero-subtitle { font-size: 1.4rem; opacity: 0.95; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 60px 20px; }
+        .section-title { font-size: 1.8rem; color: #2c5282; margin-bottom: 24px; text-align: center; }
+        .detail-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-bottom: 60px; }
+        .detail-grid:has(.section-wrapper:empty) { grid-template-columns: 1fr; }
+        .overview-card { background: white; border-radius: 16px; box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08); overflow: hidden; height: 420px; display: flex; align-items: center; justify-content: center; position: relative; }
+        .overview-card a { display: block; width: 100%; height: 100%; border-radius: 16px; overflow: hidden; }
+        .overview-card-caption { position: absolute; bottom: 0; left: 0; width: 100%; padding: 10px 20px; background: #1e3a5f; color: white; font-size: 1.1rem; font-weight: 600; text-align: center; border-bottom-left-radius: 16px; border-bottom-right-radius: 16px; pointer-events: none; backdrop-filter: blur(2px); box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1); }
+        .overview-image { width: 100%; height: 100%; object-fit: contain; background-color: #f8fafc; display: block; transition: opacity 0.2s ease; cursor: zoom-in; }
+        .overview-image:hover { opacity: 0.9; }
+        .info-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; margin-bottom: 60px; }
+        .info-card { background: white; padding: 24px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.08); text-align: center; }
+        .info-label { font-size: 0.95rem; color: #718096; margin-bottom: 8px; }
+        .info-value { font-size: 1.5rem; font-weight: 600; color: #2d3748; word-break: break-word; overflow-wrap: break-word; hyphens: auto; max-width: 100%; padding: 0 8px; }
+        .additional-details { background: white; padding: 24px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.08); margin-bottom: 40px; }
+        .accordion-header { cursor: pointer; font-size: 1.2rem; font-weight: 600; color: #2c5282; display: flex; justify-content: space-between; align-items: center; user-select: none; }
+        .accordion-header::after { content: '▼'; font-size: 0.8rem; transition: transform 0.3s; }
+        .accordion-header.open::after { transform: rotate(180deg); }
+        .accordion-content { display: none; margin-top: 16px; }
+        .accordion-content.open { display: block; }
+        .extra-info-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; }
+        .extra-info-item { font-size: 0.95rem; color: #4a5568; }
+        .extra-info-label { font-weight: 600; color: #718096; }
+        .description { background: white; padding: 32px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.08); font-size: 1.1rem; color: #4a5568; line-height: 1.8; margin-bottom: 40px; }
+        .links { text-align: center; margin-top: 40px; }
+        .links a { display: inline-block; margin: 0 12px; padding: 12px 24px; background: #2c5282; color: white; text-decoration: none; border-radius: 8px; font-weight: 600; transition: background 0.2s; }
+        .links a:hover { background: #1e3a5f; }
+        footer { text-align: center; padding: 40px 20px; color: #718096; font-size: 0.9rem; }
+        @media (max-width: 900px) { .detail-grid { grid-template-columns: 1fr; } .hero-title { font-size: 2.4rem; } .hero-overlay { padding: 30px; } }
+        @media (max-width: 480px) { .hero { height: 60vh; } .hero-title { font-size: 2rem; } }
+        @media print { body { background: white; } .hero-image { filter: none; } .hero-overlay { background: rgba(0,0,0,0.5); } }</style>
+</head>
+<body>
+    <section class="hero">
+        <img class="hero-image" src="SinglePage-img/20251228_193231186_iOS.jpg" alt="Keystone 12/28/25 hero">
+        <div class="hero-overlay">
+            <h1 class="hero-title">Keystone 12/28/25</h1>
+            <p class="hero-subtitle">December 28, 2025 • Keystone, Colorado</p>
+        </div>
+    </section>
+    <div class="container">
+
+        <h2 class="section-title">Description</h2>
+        <div class="description">
+            Beautiful bluebird day with decent snow conditions
+        </div>
+
+        <h2 class="section-title">Track Overview</h2>
+        <div class="detail-grid">
+            <div class="section-wrapper">
+                <div class="overview-card">
+                    <a href="SinglePage-img/k-map.jpg" target="_blank" rel="noopener noreferrer">
+                        <img class="overview-image" src="SinglePage-img/k-map.jpg" alt="Track map">
+                    </a>
+                    <div class="overview-card-caption">Map</div>
+                </div>
+            </div>
+            <div class="section-wrapper">
+                <div class="overview-card">
+                    <a href="SinglePage-img/k-profile.jpg" target="_blank" rel="noopener noreferrer">
+                        <img class="overview-image" src="SinglePage-img/k-profile.jpg" alt="Elevation profile">
+                    </a>
+                    <div class="overview-card-caption">Elevation profile</div>
+                </div>
+            </div></div>
+
+        <h2 class="section-title">Details</h2>
+        <div class="info-grid">
+
+            <div class="info-card">
+                <div class="info-label">Activity</div>
+                <div class="info-value">Skiing</div>
+            </div>
+
+            <div class="info-card">
+                <div class="info-label">Location</div>
+                <div class="info-value">USA/Colorado/Keystone</div>
+            </div>
+
+            <div class="info-card">
+                <div class="info-label">Distance</div>
+                <div class="info-value">20.99 mi</div>
+            </div>
+
+            <div class="info-card">
+                <div class="info-label">Time</div>
+                <div class="info-value">03:20:28</div>
+            </div>
+
+            <div class="info-card">
+                <div class="info-label">Speed</div>
+                <div class="info-value">6.28 mph</div>
+            </div>
+
+            <div class="info-card">
+                <div class="info-label">Elevation Range</div>
+                <div class="info-value">9,293-11,769 ft</div>
+            </div>
+
+            <div class="info-card">
+                <div class="info-label">People</div>
+                <div class="info-value">Clair, Gio, Kate</div>
+            </div>
+
+            <div class="info-card">
+                <div class="info-label">Tags</div>
+                <div class="info-value">Sharks</div>
+            </div>
+</div>
+
+  <!-- Key stats grid -->
+
+        
+        <div class="additional-details">
+            <div class="accordion-header">Additional Details</div>
+            <div class="accordion-content">
+                <div class="extra-info-grid">
+                    <div class="extra-info-item"><span class="extra-info-label">Ascent:</span> 938 ft</div>
+<div class="extra-info-item"><span class="extra-info-label">Descent:</span> 22,896 ft</div>
+<div class="extra-info-item"><span class="extra-info-label">Ascent speed:</span> 1,095 ft/h</div>
+<div class="extra-info-item"><span class="extra-info-label">Descent speed:</span> 11,697 ft/h</div>
+<div class="extra-info-item"><span class="extra-info-label">Elevation gain:</span> -21,958 ft</div>
+<div class="extra-info-item"><span class="extra-info-label">Laps/runs:</span> 12</div>
+<div class="extra-info-item"><span class="extra-info-label">Munter rate:</span> 10.97</div>
+
+                </div>
+            </div>
+        </div>
+
+        <h2 class="section-title">Links</h2><div class="links"><a href="https://www.keystoneresort.com/" target="_blank">Resort home page</a><a href="https://www.keystoneresort.com/the-mountain/about-the-mountain/trail-map.aspx" target="_blank">Trail maps</a><a href="https://www.keystoneresort.com/the-mountain/mountain-conditions/mountain-cams.aspx" target="_blank">Live mountain cams</a><a href="SinglePage-img/activity_21377994414_tct.gpx" download>Download GPX</a></div>
+    </div>
+    <footer>
+        Generated by TrackExplorer 1.0 • Copyright © 2026
+    </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {{
+            const header = document.querySelector('.accordion-header');
+            if (header) {{
+                header.addEventListener('click', () => {{
+                    header.classList.toggle('open');
+                    document.querySelector('.accordion-content').classList.toggle('open');
+                }});
+            }}
+
+            // Hide additional details if empty
+            const content = document.querySelector('.accordion-content');
+            if (content && content.querySelectorAll('.extra-info-item').length === 0) {{
+                document.querySelector('.additional-details').style.display = 'none';
+            }}
+        }});
+    </script>
+</body>
