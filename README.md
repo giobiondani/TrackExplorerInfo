@@ -11,6 +11,7 @@ See the resources below to find out more and help you get started:
 
 ## Support us
 If you love TrackExplorer, you can help support future development:
+- [GitHub Sponsors](https://github.com/giobiondani)
 
 ## Contact
 Contact us at info@trackexplorer.app
