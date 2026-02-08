@@ -186,13 +186,13 @@
     </style>
 </head>
 <body>
-    <h1>TrackExplorer help &amp; documentation</h1>
+    <h1>TrackExplorer help &amp; documentation.</h1>
 
     <h2 onclick="toggleSection(this)">Overview</h2>
     <div class="section-content">
         <h3>Demo mode</h3>
         <p>If you want to familiarize yourself with the app before you start creating and organizing your own tracks, you can switch to demo mode in the Settings page. This will populate the app with demo data that includes photos, GPX files, and is fully functional. You can add new tracks, edit or delete existing ones, edit the GPX files, create and use views, etc. This data can be easily restored to its initial state also in the Settings page.</p>
-        <p>You can switch between demo and live data at any time; any changes previously made to the demo data will be preserved while you are in live mode. The mode (demo or live) is displayed at the bottom of the Track page.</p>
+        <p>You can switch between demo and live data at any time; any changes previously made to the demo data will be preserved while you are in live mode. The mode (demo or live) is displayed at the bottom of the Tracks page.</p>
 
         <h3>Navigation</h3>
         <p>The main page is the Tracks page, also known as the Home page, which shows a view of your tracks. Here you can select one or more tracks. In the other pages, you can access other general functionality, or functions specific to the track or tracks that you selected:</p>
@@ -1056,6 +1056,14 @@ You can apply multiple combinations at the same time: for example, Intersection 
         </ul>
 
         <p>When the files are backed up, the "txt" extensions are replaced by "bak".<br/>You should never edit these files manually, as they are likely to become corrupt. However, you may back them up yourself and replace them if needed (before opening the app).<br/>Note that the backup process does not save any of the demo files, even if they have been modified.</p>
+
+        <h3>Other files and folders</h3>
+        <p>In addition to the files mentioned above, note the following:</p>
+        <ul>
+            <li>TrackExplorer (if so enabled in the settings) will generate a file containing the coordinates of the images in each hereo image's folder. The file is named TrackExplorerCoords.txt and is created for each track the first time you display photos in the Map page.</li>
+            <li>If you publish web pages to Netlify, TrackExplorer generates a folder named "Publish-Netlify" within the app folder. This folder contains all files that are synced with Netlify. See below for more details.</li>
+            <li>Application crash logs are saved to %APPDATA%\app.trackexplorer\crash.log</li>
+        </ul>
 
         <h3>GPX extensions</h3>
         <p>TrackExplorer reads and writes standard GPX files with TrackExplorer extensions, but does not read or save other extensions (such as, for example, heart rate information). The TrackExplorer GPX extensions are:</p>
