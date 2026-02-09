@@ -6,7 +6,7 @@
       "title": "New AI Features Released",
       "summary": "We've added real-time image generation and better prompt suggestions.",
       "priority": "normal",
-      "minAppVersion": "1.3.0",
+      "minAppVersion": "1.0",
       "content": "# New AI Tools are here!\n\nWe just rolled out...\n\n- **Image Gen v2** — faster and higher quality\n- **Smart Prompt Helper** — suggests improvements as you type\n\nTry it now in the editor!\n\n[Learn more in docs](/docs/ai-tools)"
     },
     {
