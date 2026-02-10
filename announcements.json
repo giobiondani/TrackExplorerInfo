@@ -16,6 +16,22 @@
       "summary": "Fixed crashes on large files and improved load times.",
       "priority": "low",
       "content": "## Improvements in this update\n\n- Resolved rare crash when opening 500+ page documents\n- Reduced memory usage by ~30%\n- ..."
+    },
+    {
+      "id": "2026-01-15-bugfix-release",
+      "date": "2026-01-15",
+      "title": "Bugfix & Performance Update",
+      "summary": "Fixed crashes on large files and improved load times.",
+      "priority": "high",
+      "content": "## Improvements in this update\n\n- Resolved rare crash when opening 500+ page documents\n- Reduced memory usage by ~30%\n- ..."
+    },
+    {
+      "id": "2026-01-15-bugfix-release",
+      "date": "2026-01-15",
+      "title": "Bugfix & Performance Update",
+      "summary": "Fixed crashes on large files and improved load times.",
+      "priority": "critical",
+      "content": "## Improvements in this update\n\n- Resolved rare crash when opening 500+ page documents\n- Reduced memory usage by ~30%\n- ..."
     }
   ]
 }
