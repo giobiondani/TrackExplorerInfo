@@ -876,7 +876,7 @@ See an example below:
             <li><strong>Known values</strong>: recalculates the elevations based on otherwise known elevation values for the particular track</li>
             <li><strong>Local replacement with interpolation</strong>: replaces elevation values in a specific segment of the track</li>
             <li><strong>Moving average</strong>: replaces the original elevations with the moving average of the previous ones</li>
-            <li><strong>Savitzky-Golay filter</strong>: similar to the previous, replaces the original elevations with an interpolation of the previous ones</li>
+            <li><strong>Savitzky-Golay style filter</strong>: similar to the previous, replaces the original elevations with an interpolation of the previous ones</li>
             <li><strong>Threshold</strong>: eliminates elevation changes beyond a certain threshold</li>
             <li><strong>USGS data</strong> <span class="badge badge-ext">EXT</span>: replaces elevation values with data obtained from the USGS. The availability of this service may change in time.</li>
         </ul>
@@ -905,7 +905,7 @@ If you want to correct multiple segments of the track, set the window and other 
         <h4>Moving average</h4>
         <p>Replaces each point's elevation with the average of the elevations from the given number of previous and successive points.<br/>Consider this method if you want to smooth out any spikes.<br/>For example, a setting of 4 points means that each point's elevation will be replaced by the average of the elevations of the previous 4 and successive 4 points: 8 in total.</p>
 
-        <h4>Savitzky-Golay filter</h4>
+        <h4>Savitzky-Golay style filter</h4>
         <p>Replaces each point's elevation with an interpolation of the elevations from the given number of previous and successive points.<br/>The interpolation is based on a polynomial regression of the indicated order.<br/>Consider this method if you want to smooth out any spikes.<br/>For example, a window size of 4 points with a polynomial order of 3 means that for each point in the curve, a polynomial function of order 3 will be fit to the segment starting 4 points before and ending 4 points after each point (9 points total). The coefficients of this function will then be used to recalculate the point's elevation.<br/>The maximum supprted order is 3.</p>
 
         <h4>Threshold filter</h4>
@@ -927,7 +927,7 @@ The performance values will be recalculated based on the adjusted data. In some 
 When you save the file, you may check the Data is verified box if you think that the data is now accurate.</p>
 
         <h4>Example</h4>
-        <p>In this example, the track has been adjusted with the default settings of the Savitzky-Golay filter. The elevation profile has been smoothed, and as a result, some of the performance values have changed substantially. The user has the option to save the original values or the adjusted ones.</p>
+        <p>In this example, the track has been adjusted with the default settings of the Savitzky-Golay style filter. The elevation profile has been smoothed, and as a result, some of the performance values have changed substantially. The user has the option to save the original values or the adjusted ones.</p>
         <img src="img/adjust.png" class="image-alone" alt="Adjusting the elevation">
 
         <h3>Delete ski lifts by distance</h3>
