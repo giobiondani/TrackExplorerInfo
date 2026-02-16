@@ -1,37 +1,13 @@
 {
   "announcements": [
     {
-      "id": "2026-02-08-new-ai-tools",
+      "id": "1",
       "date": "2026-02-08",
-      "title": "New AI Features Released",
-      "summary": "We've added real-time image generation and better prompt suggestions.",
+      "title": "Welcome to TrackExplorer!",
+      "summary": "This is the first release of TrackExplorer, we hope you enjoy it!",
       "priority": "normal",
       "minAppVersion": "1.0",
-      "content": "# New AI Tools are here!\n\nWe just rolled out...\n\n- **Image Gen v2** — faster and higher quality\n- **Smart Prompt Helper** — suggests improvements as you type\n\nTry it now in the editor!\n\n[Learn more in docs](/docs/ai-tools)"
-    },
-    {
-      "id": "2026-01-15-bugfix-release",
-      "date": "2026-01-15",
-      "title": "Bugfix & Performance Update",
-      "summary": "Fixed crashes on large files and improved load times.",
-      "priority": "low",
-      "content": "## Improvements in this update\n\n- Resolved rare crash when opening 500+ page documents\n- Reduced memory usage by ~30%\n- ..."
-    },
-    {
-      "id": "2026-01-15-bugfix-release 2",
-      "date": "2026-01-15",
-      "title": "Bugfix & Performance Update",
-      "summary": "This is just a test.",
-      "priority": "high",
-      "content": "## Improvements in this update\n\n- Resolved rare crash when opening 500+ page documents\n- Reduced memory usage by ~30%\n- ..."
-    },
-    {
-      "id": "2026-01-15-bugfix-release 3",
-      "date": "2026-01-15",
-      "title": "Bugfix & Performance Update",
-      "summary": "Fixed crashes on large files and improved load times.",
-      "priority": "critical",
-      "content": "## Improvements in this update\n\n- Resolved rare crash when opening 500+ page documents\n- Reduced memory usage by ~30%\n- ..."
+      "content": "Come back to this page to get news and find out about new features.\n\nIn the meantime, play around with the app in demo mode (you can enable it in the Settings page), read the Help page for all the details, or just start experimenting with it.\n\nYou can also join other users in the discussion at https://github.com/giobiondani/TrackExplorerInfo/discussions.\n\nLet us know what you think at info@trackexplorer.app."
     }
   ]
 }

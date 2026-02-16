@@ -3,11 +3,11 @@ TrackExplorer is an app for Windows that helps you explore, track, remember, and
 
 ## Information
 See the resources below to find out more and help you get started:
-- [Welcome to TrackEplorer](./index.html) - Overview of the TrackExplorer functionality with examples and screenshots
-- [TrackExplorer help](./TrackExplorer-Help.html) - Detailed help page
-- [Terms of use](./Terms-of-use.html)
-- [Privacy policy](./Privacy.html)
-- [Third-party software notices](./Third-Party-Notices.html) - Information about the third-party software used within TrackExplorer
+- [Welcome to TrackEplorer](https://TrackExplorer.app/index.html) - Overview of the TrackExplorer functionality with examples and screenshots
+- [TrackExplorer help](https://TrackExplorer.app/Trackexplorer-Help.html) - Detailed help page
+- [Terms of use](https://TrackExplorer.app/Terms-of-Use.html)
+- [Privacy policy](https://TrackExplorer.app/Privacy.html)
+- [Third-party software notices](https://TrackExplorer.app/Third-Party-Notices.html) - Information about the third-party software used within TrackExplorer
 
 ## Support us
 If you love TrackExplorer, you can help support future development:
