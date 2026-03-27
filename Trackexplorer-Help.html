@@ -650,7 +650,7 @@ Because of the rounding rules used in the calculations, when you switch systems 
 
         <h3>Photos</h3>
         <p>If the track has a hero image associated with it, TrackExplorer will look through all the photos in the same folder and show them on the map, in the place where they were taken. Only files that contain GPS coordinates are included. The photo locations can be marked by pins or labels with the name of the image. You can select the size and color of the pin. Click on a label or pin to display a preview of the image.</p>
-        <p>The coordinates are read from each image file each time the Photos expander is opened. Depending on your PC's performance and the number of pictures for a track, this may take several minutes. To avoid this, you can set "Save photo coordinates for the Map page" to On in the Settings page. With this setting on, TrackExplorer will save the coordinates to a separate file, which will make the process faster after the first time. The coordinates are saved in a text file in the same folder as the hero image of each track. Changing the setting to Off will not delete these files, but they will be ignored.</p>
+        <p>The coordinates are read from each image file each time the Photos expander is opened. Depending on where the photos are stored (locally, on a network drive, or in the cloud), how many there are, and your PC's performance, this may be time consuming. To mitigate this, you can set "Save photo coordinates for the Map page" to On in the Settings page. With this setting on, TrackExplorer will save the coordinates to a separate file, which will make the process faster after the first time. The coordinates are saved in a text file in the same folder as the hero image of each track. Changing the setting to Off will not delete these files, but they will be ignored.</p>
 
         <h3>Share</h3>
         <p>Use this button to save a copy of the map exactly as displayed on the screen, but without the tools menus. The image is saved in JPEG format with the same resolution as the screen where it's displayed. For best results, make sure that the window is on a larger screen.</p>
@@ -1069,7 +1069,7 @@ You can apply multiple combinations at the same time: for example, Intersection 
         <h3>Other files and folders</h3>
         <p>In addition to the files mentioned above, note the following:</p>
         <ul>
-            <li>TrackExplorer (if so enabled in the settings) will generate a file containing the coordinates of the images in each hereo image's folder. The file is named TrackExplorerCoords.txt and is created for each track the first time you display photos in the Map page.</li>
+            <li>TrackExplorer (if so enabled in the settings) will generate a file containing the coordinates of the images in each hero image's folder. The file is named TrackExplorerPhotoCoords.json and is created for each track the first time you display photos in the Map page.</li>
             <li>If you publish web pages to Netlify, TrackExplorer generates a folder named "Publish-Netlify" within the app folder. This folder contains all files that are synced with Netlify. See below for more details.</li>
             <li>Application crash logs are saved to %APPDATA%\app.trackexplorer\crash.log</li>
         </ul>
