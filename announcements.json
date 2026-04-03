@@ -22,7 +22,7 @@
       "id": "3",
       "date": "2026-04-03",
       "title": "Critical message!",
-      "summary": "This is just a test",
+      "summary": "This is just a second test",
       "priority": "critical",
       "minAppVersion": "1.0",
       "content": "Something really bad happened..."
