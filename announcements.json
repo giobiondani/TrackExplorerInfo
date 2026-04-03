@@ -17,6 +17,15 @@
       "priority": "critical",
       "minAppVersion": "1.0",
       "content": "Something really bad happened..."
+    },
+    {
+      "id": "3",
+      "date": "2026-04-03",
+      "title": "Critical message!",
+      "summary": "This is just a test",
+      "priority": "critical",
+      "minAppVersion": "1.0",
+      "content": "Something really bad happened..."
     }
   ]
 }
