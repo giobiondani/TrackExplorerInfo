@@ -308,6 +308,9 @@
         <h3>Munter rate</h3>
         <p>The Munter calculation can be used to estimate the time that it takes to complete a track. The formula is as follows: <strong>Hours = (distance + ascent / 100) / rate</strong>. The distance is expressed in Km and the ascent in m. The rate varies depending on the activity, terrain features, difficulty, etc. The rate can vary for example from 2 for hiking off trail, to 10 for skiing downhill. For a track with known time, distance and elevation, TrackExplorer reverse calculates four rates - a total rate for the entire track, and separate rates for the uphill, downhill and flat sections. These calculated rates can be used to compare the difficulty of similar activities and tracks, and to estimate the time of planned tracks. See the Planner page for more details and applications.</p>
 
+        <h3>Notes</h3>
+        <p>Semi-structred data that can be added to tracks. Each note has a label and a text; labels can be used to categorize notes and make it easier to filter tracks. Currently, notes are only visible in the Details page and can be used as a filter criterion in Views.</p>
+
         <h3>People</h3>
         <p>The list of people who participated in the activity. If used consistently across different tracks, they can be used to group tracks, for example in filters or with different colors in the Map page. When grouping tracks by people in the Map page, you have two options: one is to group all tracks that have exactly the same people; the other is to group tracks based on whether they have or don't have a specific person (for example, grouping all tracks with person "Alice", regardless of what the other people are).</p>
 
@@ -504,8 +507,8 @@ Because of the rounding rules used in the calculations, when you switch systems 
     <div class="section-content">
         <p>View and edit a track's data. All the fields outlined in the New track page help section are also available in the Track details page, though the statis cannot be changed. Additionally, you have options to recalculate some or all of the performance data from the GPX file, manage links to outside resources, and manage relationships to other tracks (collections).</p>
 
+        <p>Use the <strong>Notes</strong>  section to add categorized notes to the track. The label can be used to identify the same scope of note across different tracks and to help with filtering.</p>
         <p>Use the <strong>Links</strong> section to create connections to web pages that contain information relevant for the track, for example trip reports, maps, pictures, etc.</p>
-
         <p>Use the <strong>Related tracks</strong> section to add the track to one or more collections and view all tracks in the same collections. You can use this for example if you have multiple tracks for the same trip and you want to keep them connected so they are easier to find.</p>
     </div>
 
@@ -1060,9 +1063,8 @@ You can apply multiple combinations at the same time: for example, Intersection 
         <h3>Backups and the main TrackExplorer files</h3>
         <p>From the Settings page, you can back up the data on the fly, schedule an automatic recurring backup, and restore data from a previous backup. The files and folders that are saved in the backup include:</p>
         <ul>
-            <li>TrackExplorerData.json (contains all track data, custom fields settings and state information)</li>
+            <li>TrackExplorerData.json (contains all track data, including notes, links, custom fields settings and state information)</li>
             <li>TrackExplorerViews.json (contains all saved views data)</li>
-            <li>TrackExplorerLinks.json (contains the links associated to each track)</li>
             <li>TrackExplorerCollections.json (contains information about track collections)</li>
             <li>HeroImages folder (contains the hero images created from the tracks' maps)</li>
         </ul>
