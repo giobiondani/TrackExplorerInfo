@@ -317,6 +317,9 @@
         <h3>Performance data</h3>
         <p>This refers to a set of values calculated from a GPX file: distance (uphill, downhill, flat, and total); time (uphill, downhill, flat, and total); ascent and descent; the corresponding speeds; the Munter rates (uphill, downhill, flat, and total); and the minimum and maximum elevations, and elevation range. When you edit the GPX file you have the option to update these values based on the edited file, or leave them as they were originally. This data is displayed or used in the Tracks, New track, Details, History, Planner, Compare tracks, Edit tracks, and Views pages.</p>
 
+        <h3>Rating</h3>
+        <p>For each track, you can set a rating between 1 and 5. By default, the rating is empty.</p>
+
         <h3>Reference file</h3>
         <p>You can have multiple GPX files associated with a planned track. The Reference file is the one that was used to calculate the performance data.</p>
 
@@ -488,7 +491,7 @@ Because of the rounding rules used in the calculations, when you switch systems 
     <div class="section-content">
         <p>To create a new track, select the track <strong>status</strong> first - if it's a track that you already completed, select <strong>Complete</strong> and pick a single GPX file to represent the track. If you have multiple files, you can combine them later in the GPX editor page. If it's a planned track, select <strong>Planned</strong> and you will be able to select a whole folder where you may have multiple GPX files for different sections or alternative routes. You can then pick one of these files to use to calculate the performance data.<br>Once a track is created, the status may no longer be changed.</p>
 
-        <p>Then enter the track information: Name, Description, Date (populated by default from the GPX file data, if available), Season (automatically calculated from the date), Location, Activity (populated by default from the GPX file data, if available), Gear, People, and Tags.</p>
+        <p>Then enter the track information: Name, Rating, Description, Date (populated by default from the GPX file data, if available), Season (automatically calculated from the date), Location, Activity (populated by default from the GPX file data, if available), Gear, People, and Tags.</p>
 
         <p>Location and gear can be set up with a hierarchical structure, each node being separated by a / symbol. Start with the most encompassing entity: for example "USA/California/Yosemite" for the location or "Bike/MTB/Cross-country" for the gear. Once you set up the hierarchical structure, you can navigate it on a tree using the World/Gear icons to select an existing value.</p>
 
@@ -505,7 +508,7 @@ Because of the rounding rules used in the calculations, when you switch systems 
 
     <h2 onclick="toggleSection(this)">Track details page</h2>
     <div class="section-content">
-        <p>View and edit a track's data. All the fields outlined in the New track page help section are also available in the Track details page, though the statis cannot be changed. Additionally, you have options to recalculate some or all of the performance data from the GPX file, manage links to outside resources, and manage relationships to other tracks (collections).</p>
+        <p>View and edit a track's data. All the fields outlined in the New track page help section are also available in the Track details page, though the statis cannot be changed. Additionally, you have options to view, edit or recalculate some or all of the performance data from the GPX file, manage links to outside resources, and manage relationships to other tracks (collections).</p>
 
         <p>Use the <strong>Notes</strong>  section to add categorized notes to the track. The label can be used to identify the same scope of note across different tracks and to help with filtering.</p>
         <p>Use the <strong>Links</strong> section to create connections to web pages that contain information relevant for the track, for example trip reports, maps, pictures, etc.</p>
@@ -1006,7 +1009,7 @@ When you save the file, you may check the Data is verified box if you think that
         <p>When you open the page, select whether you want to create a new view or edit an existing one. When you create a new view, enter the name first. In the name you can use slashes ( / ) to create a folder structure for your views. When you look for views in the Tracks page, they are shown in a tree following this folder structure. Each criterion is enabled by a checkbox; you can enter values without ticking the checkbox, but in that case the criterion will not be applied. The view returns all tracks that match all of the enabled criteria. In other words, there is a logical AND operation applied to all criteria. For more complex logic, you can use combined views.</p>
 
         <h3>Filters</h3>
-        <p>Filters are grouped in the following sections: by attribute (using track status, availability of GPS and elevation data, availability of image), by group (using activity, gear, location, people, collection and tag), by date (date range, recent dates, season), by performance (any range of values for most of the performance fields), by text (against all fields, or name, or description), by custom fields, and specific tracks (you can create the view to include specific tracks without having to enter any other criteria).</p>
+        <p>Filters are grouped in the following sections: by attribute (using rating, track status, availability of GPS and elevation data, availability of image), by group (using activity, gear, location, people, collection and tag), by date (date range, recent dates, season), by performance (any range of values for most of the performance fields), by text (against all fields, or name, or description), by custom fields, and specific tracks (you can create the view to include specific tracks without having to enter any other criteria).</p>
 
         <p>When filtering by activity, gear, and location, you can specify individual values or any text.<br/>
             For groups that can be defined in a folder structure (location and gear), you can set the filter for a specific item, or for a full folder. For example, say that you have three tracks with the following location paths: "Italy/North/Dolomites", "Italy/North/Valtellina" and "Italy/North/Val d'Aosta"; if you create a filter selectiing the partial location path "Italy/North/", this filter will match all three tracks.</p>
