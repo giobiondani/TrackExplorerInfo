@@ -1079,7 +1079,7 @@ You can apply multiple combinations at the same time: for example, Intersection 
         <ul>
             <li>TrackExplorer (if so enabled in the settings) will generate a file containing the coordinates of the images in each hero image's folder. The file is named TrackExplorerPhotoCoords.json and is created for each track the first time you display photos in the Map page.</li>
             <li>If you publish web pages to Netlify, TrackExplorer generates a folder named "Publish-Netlify" within the app folder. This folder contains all files that are synced with Netlify. See below for more details.</li>
-            <li>Application crash logs are saved to %APPDATA%\app.trackexplorer\crash.log</li>
+            <li>Application error logs are saved to the app's local cache folder. There is one log file per app session, but it's saved only if there are errors during the session. The file name is log_yyyymmdd_hhmmss.txt, based on the date/time when it was created. You can access the log folder from the Settings page.</li>
         </ul>
 
         <h3>GPX extensions</h3>
