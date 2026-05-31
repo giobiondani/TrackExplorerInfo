@@ -231,12 +231,11 @@
         <p>Functions marked with the <span class="badge badge-beta">BETA</span> icon are in pre-release status; the functionality may not be complete and there may be bugs.</p>
         <p>Functions marked with the <span class="badge badge-ext">EXT</span> icon depend on external services. The availability of these services may change or disappear over time.</p>
 
-        <h3>Sharing <span class="badge badge-beta">BETA</span></h3>
-        <p>The sharing functionality is based on creating sharable content (image files or web pages), and saving it on your PC or uploading it to the Netlify hosting service. If you choose the option to save the content to your device, you can then upload it, publish it or share it as you wish. If you choose to upload to Netlify, you can share links to the pages directly from TrackExplorer. In order to use functionality related to Netlify, you will need to enter your site id and access token in the Settings page.</p>
-        <p>You can access sharing functionality from the following areas:</p>
+        <h3> Publishing <span class="badge badge-beta">BETA</span></h3>
+        <p>The publishing functionality is based on creating sharable content (image files or web pages), and saving it on your PC or uploading it to the Netlify hosting service. If you choose the option to save the content to your device, you can then upload it, publish it or share it as you wish. If you choose to upload to Netlify, you can share links to the pages directly from TrackExplorer. In order to use functionality related to Netlify, you will need to enter your site id and access token in the Settings page.</p>
+        <p>You can access publishing functionality from the following areas:</p>
         <ul>
-            <li><strong>Details page</strong>: create a web page with data related to the selected track, then save it on your PC or upload it to Netlify.</li>
-            <li><strong>Tracks page</strong>: create a web page for all selected tracks, then save it on your PC or upload it to Netlify; or share a link to any page that you already uploaded to Netlify.</li>
+            <li><strong>Publish page</strong>: create a web page with data related to one or more selected tracks, then save it on your PC or upload it to Netlify.</li>
             <li><strong>Profiles page</strong>: save the chart as an image on your PC.</li>
             <li><strong>Map page</strong>: save the map as an image on your PC.</li>
         </ul>
@@ -685,7 +684,7 @@ Because of the rounding rules used in the calculations, when you switch systems 
         </div>
     </div>
 
-    <h2 onclick="toggleSection(this)">Sharing page <span class="badge badge-beta">BETA</span></h2>
+    <h2 onclick="toggleSection(this)">Publish page <span class="badge badge-beta">BETA</span></h2>
     <div class="section-content">
         <p>Access this page with one or more tracks selected, to generate web pages for those tracks that you can share in various ways. This functionality is in beta, it is limited and may change in future releases. It also depends on external services which may become unavailable in the future.</p>
 
@@ -704,7 +703,7 @@ Because of the rounding rules used in the calculations, when you switch systems 
 
         <h4>Upload to Netlify <span class="badge badge-ext">EXT</span></h4>
         <p>This requires a Netlify account; you can enter the account information in the settings page. After you upload a page to Netlify, you will get a link that you can easily share through Windows.</p>
-        <p>Whenever you deploy a web page to Netlify, the files are saved to a sync folder. The whole sync folder is synced every time - this includes not only the newly created page, but also all the older ones. The last section in the Sharing page allows you to view the list of pages in the sync folder, create links to them, delete them, and sync the whole folder with Netlify. When you delete files from the sync folder, the corresponding files will also be deleted from Netlify as soon as you publish a page or manually sync the folder. This functionality depends on external parties and may change or become unavailable in the future.</p>
+        <p>Whenever you deploy a web page to Netlify, the files are saved to a sync folder. The whole sync folder is synced every time - this includes not only the newly created page, but also all the older ones. The last section in the Publish page allows you to view the list of pages in the sync folder, create links to them, delete them, and sync the whole folder with Netlify. When you delete files from the sync folder, the corresponding files will also be deleted from Netlify as soon as you publish a page or manually sync the folder. This functionality depends on external parties and may change or become unavailable in the future.</p>
 
         <p>See the Technical information section for more details.</p>
     </div>
@@ -1087,7 +1086,7 @@ You can apply multiple combinations at the same time: for example, Intersection 
             <li>Within GPX / trk / trkseg / trkpt: elapsed tag, containing a timespan object. This represents the elapsed time from the beginning of the track and it's updated when you modify the file to compress times (for example in the Delete ski lifts tools or the Adjust time outliers tool). This allows for the preservation of the original date/time data while supporting the compressed times.</li>
         </ul>
 
-        <h3>Sharing <span class="badge badge-beta">BETA</span></h3>
+        <h3>Publishing <span class="badge badge-beta">BETA</span></h3>
 
         <h4>Web pages</h4>
         <p>Each page consists of the following:</p>
@@ -1097,7 +1096,7 @@ You can apply multiple combinations at the same time: for example, Intersection 
         </ul>
 
         <h4>Netlify <span class="badge badge-ext">EXT</span></h4>
-        <p>When you publish a page to Netlify, the files are saved in a folder called Publish inside your TrackExplorer main folder before they are uploaded to Netlify. This is a mirror of your Netlify site. Every time you publish a new page, or manually select the Sync option in the Sharing page, all files within the Publish folder are deployed to Netlify. Only the new, deleted or edited files are actually updated, but it's important to note that ALL files in that folder will be synced - not only the ones related to the last created page.</p>
+        <p>When you publish a page to Netlify, the files are saved in a folder called Publish inside your TrackExplorer main folder before they are uploaded to Netlify. This is a mirror of your Netlify site. Every time you publish a new page, or manually select the Sync option in the Publish page, all files within the Publish folder are deployed to Netlify. Only the new, deleted or edited files are actually updated, but it's important to note that ALL files in that folder will be synced - not only the ones related to the last created page.</p>
 
         <h3>Units of measure</h3>
         <p>When you save a track, the performance data will be saved in the file using the units (USCS or Metric) selected for display at that point in time.<br/> 
