@@ -341,7 +341,14 @@
         <p>A series of words associated to a track and used to describe it. If used consistently across different tracks, they can be used to group tracks, for example in filters or with different colors in the Map page. When grouping tracks by tag in the Map page, you have two options: one is to group all tracks that have exactly the same tags; the other is to group tracks based on whether they have or don't have a specific tag.</p>
 
         <h3>Time</h3>
-        <p>Four values are calculated and displayed: total, ascending, descending and flat time. The total time is always equal to the sum of the others. These values can be edited in the Details page if needed.</p>
+        <h4>Time (or Track time)</h4>
+        <p>Four values are calculated and displayed: total, ascending, descending and flat time. The total time is always equal to the sum of the others. These values can be edited in the Details page if needed.<br/>
+        If you delete parts of the track using the GPX Editor (Trim and Delete ski lifts tools), the track time will not include the time from the segments that were deleted.</p>
+        <h4>Time (Elapsed)</h4>
+        <p>This is simply the difference between the timestamp of the last track point and the timestamp of the first track point in the file.<br/>
+        If you delete parts of the track using the GPX Editor (Trim and Delete ski lifts tools), the elapsed time will still include the time from the segments that were deleted, unless you trimmed the first or last points.</p>
+        <h4>Collapse times</h4>
+        <p>This is an option available in some of the GPX Editor tools. When you delete segments inside the track (for example using the Trim middle or Delete ski lifts tools) you have the option to ignore the resulting time gaps when displaying the elevation profile by time. See an example below in the "GPX editor page" section.</p>
 
         <h3>Units of measurement</h3>
         <p>Track data can be displayed using either the US Customary System (miles and feet) or the Metric system (kilometers and meters).<br/>
@@ -850,7 +857,7 @@ TrackExplorer provides some warnings if the reference tracks appear to have valu
         <p>Shows all the operations performed by TrackExplorer to the GPX file. This includes the type of operation and the values of the parameters used. Operations performed by other tools are not shown, unless they use the same standard to record the data. This data in the file may not be readable by other tools.</p>
 
         <h3>Trim</h3>
-        <p>Delete points at the beginning, end, or middle of the track. Use the slider and map to find the points easily. When you save, you can choose to recalculate all performance data based on the updated file.</p>
+        <p>Delete points at the beginning, end, or middle of the track. Use the slider and map to find the points easily. When you save, you can choose to recalculate all performance data based on the updated file.<br/>See below (Delete ski lifts by distance) for an example on how to use the "Collapse times" option.</p>
 
         <h3>Combine</h3>
         <p>Combine the GPX file of the selected track with a new one. There are two operations available: Join and Blend.</p>
@@ -979,6 +986,7 @@ When you save the file, you may check the Data is verified box if you think that
         <p>TrackExplorer goes through all the points in the track and keeps count of the cumulated uphill distance and ascent, and downhill distance; as soon as both minimums are reached, without passing the maximum, it flags the corresponding points. Once the maximum is hot, it starts over.</p>
         <p>The sections that were identified are displayed in the table and when selected can be viewed in the map. Confirm which sections you want to delete and select them.</p>
         <img src="img/byelevation.png" class="image-alone" alt="Confirm ski lift segments">
+        <p>See above (Delete ski lifts by distance) for an example on how to use the "Collapse times" option.</p>
         <p>Check the "Update number of runs" checkbox to update the "Laps/runs" field with the number of segments obtained after deleting the selected sections.</p>
 
         <h3>Adjust time outliers</h3>
