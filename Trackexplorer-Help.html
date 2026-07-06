@@ -514,11 +514,25 @@ Because of the rounding rules used in the calculations, when you switch systems 
 
     <h2 onclick="toggleSection(this)">Track details page</h2>
     <div class="section-content">
-        <p>View and edit a track's data. All the fields outlined in the New track page help section are also available in the Track details page, though the statis cannot be changed. Additionally, you have options to view, edit or recalculate some or all of the performance data from the GPX file, manage links to outside resources, and manage relationships to other tracks (collections).</p>
-
-        <p>Use the <strong>Notes</strong>  section to add categorized notes to the track. The label can be used to identify the same scope of note across different tracks and to help with filtering.</p>
-        <p>Use the <strong>Links</strong> section to create connections to web pages that contain information relevant for the track, for example trip reports, maps, pictures, etc.</p>
-        <p>Use the <strong>Related tracks</strong> section to add the track to one or more collections and view all tracks in the same collections. You can use this for example if you have multiple tracks for the same trip and you want to keep them connected so they are easier to find.</p>
+        <p>View and edit a track's data. All the fields outlined in the New track page help section are also available in the Track details page, though the status cannot be changed. Additionally, the following sections are also available:</p>
+        <p><strong>Performance data:</strong><br/>
+            Displays all distances, times, elevations, speeds and effective Munter rates. Distances, track times, and elevations can be edited. Note the following rules.<br/>
+            When editing:<br/>
+            <ul>
+                <li>Distances, times or elevations: the corresponding speeds and effective Munter rates are updated automatically</li>
+                <li>Uphill, downhill, or flat distances/times: the corresponding total is updated automatically</li>
+                <li>Total distance or total time: the corresponding uphill, downhill, and flat values are updated automatically maintaining the original ratio</li>
+                <li>Ascent or descent: the elevation gain is updated automatically</li>
+                <li>Elevation gain: ascent and descent are updated automatically</li>
+                <li>Low or high elevation: the elevation range is updated automatically</li>
+            </ul><br/>
+        The total elapsed time is not editable. However, if it's not a good representation of the actual elapsed time, you may override it with the total track time - use the
+        <strong>Copy track time to elapsed</strong> button to override it. This may be useful for example if you combined several tracks into one and the resulting elapsed time is not meaningful.<br/>
+        If you edited some of the data and you want to reset it to the original values, use the
+        <strong>Recalculate from GPX</strong> button. You may recalculate distances, elevations and times separately, or all of them.
+        <p><strong>Notes:</strong><br/>Add to or remove notes from the track. Notes have a label that can be used to identify notes of the same type across tracks, and to help with filtering.</p>
+        <p><strong>Links:</strong><br/>Add to or remove links from the track. Links contain a text and a URL, and may be used to refer to web pages that contain information relevant for the track, for example trip reports, map, pictures, etc.</p>
+        <p><strong>Related tracks:</strong><br/>Displays a list of all related tracks, meaning tracks that are in in at least one of the same collections as the current one. You can also add the track to new collections, remove it from existing ones, and navigate to any of the related tracks.</p>
     </div>
 
     <h2 onclick="toggleSection(this)">Photos page</h2>
