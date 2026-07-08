@@ -1,192 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="img/favicon.ico" type="image/x-icon">
-    <link rel="icon" href="img/favicon-32x32.png" sizes="32x32" type="image/png">
-    <link rel="icon" href="img/favicon-16x16.png" sizes="16x16" type="image/png">
-
-    <title>Help - TrackExplorer</title>
-    <style>
-        body {
-            font-family: Segoe UI, Arial, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            max-width: 800px;
-            margin: 40px auto;
-            padding: 20px;
-            background-color: #f9f9f9;
-        }
-        h1, h2, h3 {
-            color: #005a9e;
-        }
-        h1 {
-            text-align: center;
-            margin-bottom: 30px;
-        }
-        h2 {
-            margin-top: 30px;
-            margin-bottom: 15px;
-            cursor: pointer;
-            padding: 10px;
-            background-color: #e8f4f8;
-            border-left: 4px solid #005a9e;
-        }
-        h2:hover {
-            background-color: #d4ebf5;
-        }
-        .image-gallery {
-            margin: 20px 0;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-            overflow: hidden;
-        }
-        .gallery-image {
-            width: 100%;
-            max-width: 800px;
-            height: auto;
-            display: none;
-        }
-        .gallery-image.active {
-            display: block;
-        }
-        .image-alone {
-            width: 100%;
-            max-width: 800px;
-            height: auto;
-            display: block;
-        }
-        .gallery-caption {
-            padding: 10px;
-            background-color: #f5f5f5;
-            font-style: italic;
-            font-size: 0.9em;
-            text-align: center;
-        }
-        .gallery-controls {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 10px;
-            background-color: #f5f5f5;
-            gap: 15px;
-        }
-        .gallery-button {
-            padding: 8px 16px;
-            background-color: #005a9e;
-            color: white;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-            font-size: 14px;
-        }
-        .gallery-button:hover {
-            background-color: #004080;
-        }
-        .gallery-button:disabled {
-            background-color: #ccc;
-            cursor: not-allowed;
-        }
-        .gallery-counter {
-            font-size: 14px;
-            color: #666;
-        }
-        h3 {
-            margin-top: 20px;
-            margin-bottom: 10px;
-            font-size: 1.1em;
-        }
-        h4 {
-            margin-top: 15px;
-            margin-bottom: 8px;
-            font-weight: bold;
-            color: #333;
-        }
-        p {
-            margin-bottom: 1em;
-        }
-        ul {
-            margin-bottom: 1em;
-            padding-left: 20px;
-        }
-        a {
-            color: #005a9e;
-        }
-        .section-content {
-            display: none;
-            padding: 15px 10px;
-        }
-        .section-content.active {
-            display: block;
-        }
-        .badge {
-            display: inline-block;
-            padding: 2px 6px;
-            font-size: 10px;
-            font-weight: bold;
-            border-radius: 3px;
-            margin-left: 5px;
-        }
-        .badge-beta {
-            background-color: orange;
-            color: white;
-        }
-        .badge-ext {
-            background-color: lightgreen;
-            color: black;
-        }
-        .indent {
-            margin-left: 20px;
-        }
-        .indent2 {
-            margin-left: 40px;
-        }
-        .footer {
-            margin-top: 40px;
-            font-size: 0.9em;
-            text-align: center;
-            color: #666;
-        }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 10px 0;
-        }
-        table td {
-            padding: 5px;
-            vertical-align: top;
-        }
-        table td:first-child {
-            font-style: italic;
-            width: 30%;
-        }
-        .warning {
-            background-color: #fff4e5;
-            border-left: 4px solid #ff9800;
-            padding: 10px;
-            margin: 15px 0;
-        }
-        .expand-all {
-            text-align: center;
-            margin-bottom: 20px;
-        }
-        .expand-all button {
-            padding: 10px 20px;
-            background-color: #005a9e;
-            color: white;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-            font-size: 14px;
-        }
-        .expand-all button:hover {
-            background-color: #004080;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>TrackExplorer help</title>
+  
+  <link rel="icon" href="img/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="img/favicon-32x32.png" sizes="32x32" type="image/png">
+  <link rel="icon" href="img/favicon-16x16.png" sizes="16x16" type="image/png">
+  
+  <link rel="stylesheet" href="css/styles.css">
 </head>
-<body>
-    <h1>TrackExplorer help &amp; documentation.</h1>
+<body class="help-page">
+    
+    <div class="header-branding">
+  <img src="img/Logo 01-220.png" 
+       alt="TrackExplorer App Logo" 
+       width="180" 
+       height="180" 
+       class="app-logo">
+  
+  <div class="title-group">
+    <h1>TrackExplorer help &amp; documentation</h1>
+    <p class="tagline">Explore, track, remember, and understand your adventures</p>
+  </div>
+</div>
 
     <h2 onclick="toggleSection(this)">Overview</h2>
     <div class="section-content">
@@ -1148,9 +986,9 @@ This only affects the data file: regardless of the unit used when saving the fil
         <a class="indent" href="Third-Party-Notices.htm" target="_blank">Third-party notices</a></div>
     </div>
 
-    <div class="footer">
+    <footer>
         &copy; 2026 Giordano Biondani. All rights reserved.
-    </div>
+    </footer>
 
     <script>
         const galleryData = {
