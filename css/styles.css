@@ -391,3 +391,17 @@ footer {
 .blog-teaser a:hover {
   text-decoration: underline;
 }
+
+/* Small Blog Teaser at Top of Main Page */
+.blog-teaser-small {
+  background-color: #f8fafc;
+  border-left: 4px solid #489BB3;
+  padding: 1.2rem 1.5rem;
+  margin: 2rem 0;
+  border-radius: 6px;
+}
+
+.blog-teaser-small strong {
+  color: #225674;
+  font-size: 1.15rem;
+}
