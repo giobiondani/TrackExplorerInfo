@@ -39,14 +39,6 @@ h2 {
   text-align: center; 
 }
 
-/* Smaller secondary headings */
-h2.secondary {
-  font-size: 1.3rem !important;
-  font-weight: 500;
-  color: #225674 !important;
-  margin-top: 1.2rem;
-}
-
 img {
   width: 100%;
   height: auto;
@@ -121,27 +113,6 @@ hr {
   }
 }
 
-.links { 
-  text-align: center; 
-  margin-top: 40px; 
-}
-
-.links a { 
-  display: inline-block; 
-  margin: 0 12px; 
-  padding: 12px 24px; 
-  background: #2c5282; 
-  color: white; 
-  text-decoration: none; 
-  border-radius: 8px; 
-  font-weight: 600; 
-  transition: background 0.2s; 
-}
-
-.links a:hover { 
-  background: #1e3a5f; 
-}
-
 footer {
   margin-top: 3rem;
   text-align: center;
@@ -158,12 +129,13 @@ footer {
 }
 
 .app-logo {
-  width: 100px;
-  height: 100px;
+  width: 120px;
+  height: 120px;
   object-fit: contain;
   border-radius: 8%;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  
 }
+/*box-shadow: 0 4px 12px rgba(0,0,0,0.08);*/
 
 .title-group {
   flex: 1;
@@ -210,7 +182,7 @@ footer {
 }
 
 /* Only override what is necessary for functionality */
-.help-page h2 {
+.help-page h2:not(.section-title) {
   margin-top: 30px;
   margin-bottom: 15px;
   cursor: pointer;
@@ -219,12 +191,13 @@ footer {
   border-left: 4px solid #489BB3;
 }
 
-.help-page h2:hover {
+.help-page h2:not(.section-title):hover {
   background-color: #d4ebf5;
 }
 
 .image-gallery {
-  margin: 20px 0;
+  margin: 20px auto;
+  max-width: 800px;
   border: 1px solid #ddd;
   border-radius: 4px;
   overflow: hidden;
@@ -246,6 +219,7 @@ footer {
   max-width: 800px;
   height: auto;
   display: block;
+  margin: 0 auto;
 }
 
 .gallery-caption {
@@ -315,24 +289,6 @@ footer {
   margin: 15px 0;
 }
 
-.expand-all {
-  text-align: center;
-  margin-bottom: 20px;
-}
-
-.expand-all button {
-  padding: 10px 20px;
-  background-color: #489BB3;
-  color: white;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-}
-
-.expand-all button:hover {
-  background-color: #225674;
-}
-
 /* Blog Category Badges */
 .blog-badge {
   display: inline-block;
@@ -361,6 +317,21 @@ footer {
 .blog-badge.integrations {
   background-color: #fefce8;
   color: #854d0e;
+}
+
+.blog-badge.category-e {
+  background-color: #fef2f2;
+  color: #b91c1c;
+}
+
+.blog-badge.category-f {
+  background-color: #fdf2f8;
+  color: #a21caf;
+}
+
+.blog-badge.category-g {
+  background-color: #f1f5f9;
+  color: #475569;
 }
 
 /* Blog Link Section on Main Page */
@@ -404,4 +375,94 @@ footer {
 .blog-teaser-small strong {
   color: #225674;
   font-size: 1.15rem;
+}
+
+/* Subtle Links Section */
+.links-subtle {
+  text-align: center;
+  margin: 2.5rem 0 3rem 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.links-subtle a {
+  color: #225674;
+  text-decoration: none;
+  font-weight: 500;
+  white-space: nowrap;           /* Prevents breaking words */
+  transition: color 0.2s;
+}
+
+.links-subtle a:hover {
+  color: #489BB3;
+  text-decoration: underline;
+}
+
+/* =============================================
+   Blog Index Page Styles
+   ============================================= */
+
+.blog-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3rem;
+  margin: 2.5rem 0;
+}
+
+@media (min-width: 900px) {
+  .blog-container {
+    grid-template-columns: 2.3fr 1.2fr;   /* Left wider, right narrower - adjust as needed */
+  }
+}
+
+.blog-sidebar {
+  background-color: #f8fafc;
+  padding: 1.8rem;
+  border-radius: 8px;
+  height: fit-content;
+  position: sticky;
+  top: 2rem;
+}
+
+.blog-post {
+  margin-bottom: 2.2rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid #eee;
+}
+
+.blog-post:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+  margin-bottom: 0;
+}
+
+.blog-post .blog-badge {
+  margin-bottom: 6px;
+}
+
+/* Post title links */
+.blog-post h3 a {
+  color: #225674;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.blog-post h3 a:hover {
+  color: #489BB3;
+  text-decoration: underline;
+}
+
+.blog-post h3 {
+  margin: 0.35rem 0 0.6rem 0;
+  font-size: 1.35rem;
+  line-height: 1.3;
+}
+
+.blog-post p {
+  margin: 0.4rem 0 0;
+  color: #555;
+  font-size: 1rem;
+  line-height: 1.5;
 }
