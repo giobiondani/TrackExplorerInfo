@@ -133,11 +133,11 @@
         <h3>Gear</h3>
         <p>The equipment used for the track. For example, for skiing activities this could be the type/model of skis; for biking activities, it could be the type/model of bicycle. Use slashes to create a tree structure: for example, entering the gear as Bike/Mountain/Yeti SB130 will create three nested levels. You will then be able to easily filter for all mountain bikes or all bikes. The gear can be used to group and filter tracks. When you start typing in the gear field, TrackExplorer will make suggestions based on gear that you entered before. You can also use the Gear button to open a navigation tree based on the existing gear structure.</p>
 
-        <h3>Laps/runs</h3>
-        <p>The number of laps or runs, depending on the activity. For example for skiing, this number could represent the number of runs skied. For track running, this could be the number of laps completed.</p>
-
         <h3>Hero image</h3>
         <p>This is the main image associated with a track. It's displayed in the Details page, as well as the Tracks page. The Photos page displays all image files contained in the same folder where the hero image is found. Therefore, we recommend to place all pictures related to a track in the same folder, and to select the hero image from that folder.</p>
+
+        <h3>Laps/runs</h3>
+        <p>The number of laps or runs, depending on the activity. For example for skiing, this number could represent the number of runs skied. For track running, this could be the number of laps completed.<br/>TrackExplorer does not attempt to calculate this number, except when deleting ski lifts (see the GPX Editor section).<br/>The default value is always 1.</p>
 
         <h3>Link</h3>
         <p>Use links to associate additional information to a track. For example, link online reviews, maps or pictures for a trail. This is particularly useful for planned tracks, when you are trying to make sense of multiple sources of information. You can create and view links in the Details page.</p>
@@ -344,7 +344,7 @@ Because of the rounding rules used in the calculations, when you switch systems 
 
         <p>Then select the <strong>Hero image file</strong>. The selected image will be shown to represent the track in several pages, including the Tracks page. When navigating to the Photos page for the track, TrackExplorer will display all images from the same folder of the hero image (including all subfolders). Therefore, it makes sense to place all and only the images related to an individual track in the same folder. TrackExplorer supports multiple image formats, but jpeg is preferred for performance. If you don't select an image, TrackExplorer will use a default placeholder. If you prefer, you can press the "Use map" button to generate an image from the track's map. The image file will be saved in the app folder.</p>
 
-        <p>You can then populate some other fields: Laps/runs (representing the number of laps or runs completed in the track), Custom fields 1-3 (these fields can be used for any purpose; the labels and data types can be configured in the Settings page), and Custom field 4 (this field can also be used for any purpose, but it can only be text). The custom fields must be enabled in the Settings page before they can be used.</p>
+        <p>You can then populate some other fields: Laps/runs (representing the number of laps or runs completed in the track, by default set to 1), Custom fields 1-3 (these fields can be used for any purpose; the labels and data types can be configured in the Settings page), and Custom field 4 (this field can also be used for any purpose, but it can only be text). The custom fields must be enabled in the Settings page before they can be used.</p>
 
         <p>The values in the location, activity, gear, people, tags, and custom fields will be saved and presented for quick selection the next time a new track is created.</p>
 
@@ -857,7 +857,7 @@ When you save the file, you may check the Data is verified box if you think that
         <p>Select the text field that you want to update, and enter the update command. There are commands available to: append text at the end, insert text at the beginning, remove text, replace text, overwrite the field, and clear the field.<br/>You can optionally test the command on a specific track. Do this to make sure that the command will behave as expected. When you are ready, press the Update button to update all selected tracks.</p>
 
         <h3>Recalculate performance data fields from the GPX file</h3>
-        <p>Use this if any of the performance values have been manually updated incorrectly and you want to refresh them. Select the field(s) that you want to recalculate, and choose if and how you want to reset the Data is verified box; then press the Recalculate button. TrackExplorer reads all GPX files for all selected tracks and updates the performance data accordingly.</p>
+        <p>Use this if any of the performance values have been manually updated incorrectly and you want to refresh them. Select the field(s) that you want to recalculate, and choose if and how you want to reset the Data is verified box; then press the Recalculate button. TrackExplorer reads all GPX files for all selected tracks and updates the performance data accordingly. Note the if you only reset the Laps/runs field, the GPX file won't actually be read, as that is not needed.</p>
 
         <h3>Convert images</h3>
         <p>HEIC images may present performance issues on some PCs. If you are facing this problem, and you have multiple hero images in HEIC format, this can negatively affect your experience in the Tracks page. Use this tool to convert all hero images for the selected tracks from HEIC to JPEG. You can optionally delete the original files.</p>
