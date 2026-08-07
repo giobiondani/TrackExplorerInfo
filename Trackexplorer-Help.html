@@ -742,7 +742,7 @@ See an example below:
         <h3>Adjust elevation</h3>
         <p>The elevation data from the GPS device may sometimes be noisy or otherwise inaccurate, which leads to a misestimation of the values for ascent, descent, uphill time and distance, downhill time and distance and flat time and distance. There are several methods available to adjust the elevation values. Each method may be appropriate for different circumstances:</p>
         <ul>
-            <li><strong>Decimation</strong>: simply removes a set proportion of the elevation points</li>
+            <li><strong>Sparse interpolation</strong>: simply replaces a set proportion of the elevation points with interpolated values (but doesn't affect coordinates)</li>
             <li><strong>Known values</strong>: recalculates the elevations based on otherwise known elevation values for the particular track</li>
             <li><strong>Local replacement with interpolation</strong>: replaces elevation values in a specific segment of the track</li>
             <li><strong>Moving average</strong>: replaces the original elevations with the moving average of the previous ones</li>
@@ -751,8 +751,10 @@ See an example below:
             <li><strong>USGS data</strong> <span class="badge badge-ext">EXT</span>: replaces elevation values with data obtained from the USGS. The availability of this service may change in time.</li>
         </ul>
 
-        <h4>Decimation</h4>
-        <p>Preserves the elevation data for the specified fraction of the coordinate points. The elevations of the other points are replaced with linearly interpolated values.<br/>Consider this method if the elevation data is too jittery.<br/>For example, a factor of 3 means that 1/3 of the elevations will be preserved.</p>
+        <h4>Sparse interpolation</h4>
+        <p>Preserves the elevation data for the specified fraction of the coordinate points. The elevations of the other points are replaced with linearly interpolated values. The coordinates are not changed, only the elevations.
+        <br/>Consider this method if you want a quick way to simplify the profile using fewer real data points.
+        <br/>The factor specifies what fraction of elevation points are preserved. For example, a factor of 3 means that 1/3 of the elevations will be preserved. Larger factors (8 or more) work better on noisy, dense recordings but risk obscuring real terrain. Sparse or clean data should use smaller factors (4 or less). Verify the adjusted ascent/descent totals before saving.</p>
 
         <h4>Known values</h4>
         <p>Recalculates all elevation data based on known values (start and end elevation, high or low elevation, ascent and descent).<br/>The calculation is performed separately on the first part of the track (from the start to the first low/high point) and the second (from the first low/high point to the end).<br/>The new values are calculated such that the following constraints are always respected:</p>
