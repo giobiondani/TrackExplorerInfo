@@ -746,15 +746,14 @@ See an example below:
             <li><strong>Sparse interpolation</strong>: simply replaces a set proportion of the elevation points with interpolated values (but doesn't affect coordinates)</li>
             <li><strong>Known values</strong>: recalculates the elevations based on otherwise known elevation values for the particular track</li>
             <li><strong>Local replacement with interpolation</strong>: replaces elevation values in a specific segment of the track</li>
-            <li><strong>Moving average</strong>: replaces the original elevations with the moving average of the previous ones</li>
             <li><strong>Threshold</strong>: eliminates elevation changes beyond a certain threshold</li>
             <li><strong>USGS data</strong> <span class="badge badge-ext">EXT</span>: replaces elevation values with data obtained from the USGS. The availability of this service may change in time.</li>
         </ul>
 
         <h4>Savitzky-Golay filter</h4>
         <p>Replaces each point's elevation with the value of a polynomial regression fit to the surrounding points, using the selected window size and order. The polynomial is fit independently at every point and evaluated at that point's position, smoothing out noise while preserving the underlying shape of the curve.<br/>
-        Use this method to reduce GPS noise and jitter across the track while keeping real terrain features — summits, valleys, sustained climbs — largely intact. It's generally a better fit than Moving average when preserving peak and valley accuracy matters, since it accounts for local curvature rather than flattening it.<br/>
-        Window size sets how many points before and after each point are used in the fit; order controls how closely the fit follows local curvature. Order 1 behaves like a simple average; orders 2, 4, and 6 track sharper features more closely, at the cost of following noise more closely too. Only even orders are offered, since odd orders duplicate the even order below them. Larger windows support higher orders more safely — small windows paired with high orders can produce unstable results.</p>
+        Use this method to reduce GPS noise and jitter across the track while keeping real terrain features (summits, valleys, sustained climbs) largely intact. It's generally a better fit than Moving average when preserving peak and valley accuracy matters, since it accounts for local curvature rather than flattening it.<br/>
+        </p>
 
         <h4>Sparse interpolation</h4>
         <p>Preserves the elevation data for the specified fraction of the coordinate points. The elevations of the other points are replaced with linearly interpolated values. The coordinates are not changed, only the elevations.
@@ -778,9 +777,6 @@ Use the Interpolation type toggle to switch between Polynomial and Constant slop
 Use the Reference points number box to specify the number of points (at the beginning and end of the window) used for the interpolation.<br/>
 For Polynomial interpolation, enter the order in the Polynomial order number box. The order must be between 0 and 3.<br/>
 If you want to correct multiple segments of the track, set the window and other parameters, click the Apply & keep button, then move the window and repeat as many times as needed. Use the Apply once button for a single correction.</p>
-
-        <h4>Moving average</h4>
-        <p>Replaces each point's elevation with the average of the elevations from the given number of previous and successive points.<br/>Consider this method if you want to smooth out any spikes.<br/>For example, a setting of 4 points means that each point's elevation will be replaced by the average of the elevations of the previous 4 and successive 4 points: 8 in total.</p>
 
         <h4>Threshold filter</h4>
         <p>Eliminates the elevation changes between successive points that are smaller than the given threshold.<br/>Consider this method if you see large elevation changes that are spurious.<br/>For example, if you set the threshold to 5, any elevation change larger than 5 will be replaced by 5.</p>
