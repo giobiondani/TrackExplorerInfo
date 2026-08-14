@@ -743,16 +743,21 @@ See an example below:
         <p>The elevation data from the GPS device may sometimes be noisy or otherwise inaccurate, which leads to a misestimation of the values for ascent, descent, uphill time and distance, downhill time and distance and flat time and distance. There are several methods available to adjust the elevation values. Each method may be appropriate for different circumstances:</p>
         <ul>
             <li><strong>Savitzky-Golay filter</strong>: replaces the original elevations with an interpolation of the surrounding ones</li>
+            <li><strong>Threshold</strong>: eliminates elevation changes beyond a certain threshold</li>
             <li><strong>Sparse interpolation</strong>: simply replaces a set proportion of the elevation points with interpolated values (but doesn't affect coordinates)</li>
             <li><strong>Known values</strong>: recalculates the elevations based on otherwise known elevation values for the particular track</li>
             <li><strong>Local replacement with interpolation</strong>: replaces elevation values in a specific segment of the track</li>
-            <li><strong>Threshold</strong>: eliminates elevation changes beyond a certain threshold</li>
             <li><strong>USGS data</strong> <span class="badge badge-ext">EXT</span>: replaces elevation values with data obtained from the USGS. The availability of this service may change in time.</li>
         </ul>
 
         <h4>Savitzky-Golay filter</h4>
         <p>Replaces each point's elevation with the value of a polynomial regression fit to the surrounding points, using the selected window size and order. The polynomial is fit independently at every point and evaluated at that point's position, smoothing out noise while preserving the underlying shape of the curve.<br/>
         Use this method to reduce GPS noise and jitter across the track while keeping real terrain features (summits, valleys, sustained climbs) largely intact.
+        </p>
+
+        <h4>Threshold filter</h4>
+        <p>Compares each point’s elevation to the previous point and caps any change that exceeds the threshold. Chained mode compares against the previous adjusted elevation, guaranteeing no consecutive points differ by more than the threshold. Independent mode compares against the previous original elevation, so residual jumps larger than the threshold can remain.<br/>
+            Best for removing brief, isolated spikes (sensor glitches or single-point GPS errors) without touching the rest of the track. It is not a general smoother: any stretch where consecutive points change by more than the threshold (a steep, sustained climb or descent) will be rate-limited and can lag behind the real terrain.
         </p>
 
         <h4>Sparse interpolation</h4>
@@ -778,8 +783,7 @@ Use the Reference points number box to specify the number of points (at the begi
 For Polynomial interpolation, enter the order in the Polynomial order number box. The order must be between 0 and 3.<br/>
 If you want to correct multiple segments of the track, set the window and other parameters, click the Apply & keep button, then move the window and repeat as many times as needed. Use the Apply once button for a single correction.</p>
 
-        <h4>Threshold filter</h4>
-        <p>Eliminates the elevation changes between successive points that are smaller than the given threshold.<br/>Consider this method if you see large elevation changes that are spurious.<br/>For example, if you set the threshold to 5, any elevation change larger than 5 will be replaced by 5.</p>
+
 
         <h4>USGS data <span class="badge badge-ext">EXT</span></h4>
         <p>Divides the track in the specified number of segments. For each segment, the original elevations of 3 consecutive points in the middle are compared to the USGS elevations of the same 3 points, calculating an adjustment ratio (USGS elevation / original elevation).<br/>
