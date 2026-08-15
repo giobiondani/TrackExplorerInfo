@@ -744,9 +744,9 @@ See an example below:
         <ul>
             <li><strong>Savitzky-Golay filter</strong>: replaces the original elevations with an interpolation of the surrounding ones</li>
             <li><strong>Threshold</strong>: eliminates elevation changes beyond a certain threshold</li>
+            <li><strong>Local replacement with interpolation</strong>: replaces elevation values in a specific segment of the track</li>
             <li><strong>Sparse interpolation</strong>: simply replaces a set proportion of the elevation points with interpolated values (but doesn't affect coordinates)</li>
             <li><strong>Known values</strong>: recalculates the elevations based on otherwise known elevation values for the particular track</li>
-            <li><strong>Local replacement with interpolation</strong>: replaces elevation values in a specific segment of the track</li>
             <li><strong>USGS data</strong> <span class="badge badge-ext">EXT</span>: replaces elevation values with data obtained from the USGS. The availability of this service may change in time.</li>
         </ul>
 
@@ -759,6 +759,11 @@ See an example below:
         <p>Compares each point’s elevation to the previous point and caps any change that exceeds the threshold. Chained mode compares against the previous adjusted elevation, guaranteeing no consecutive points differ by more than the threshold. Independent mode compares against the previous original elevation, so residual jumps larger than the threshold can remain.<br/>
             Best for removing brief, isolated spikes (sensor glitches or single-point GPS errors) without touching the rest of the track. It is not a general smoother: any stretch where consecutive points change by more than the threshold (a steep, sustained climb or descent) will be rate-limited and can lag behind the real terrain.
         </p>
+
+        <h4>Local replacement with interpolation</h4>
+        <p>Adjusts the elevation of the points within the selected window. This method takes a set of reference points from the beginning and the end of the window and fits a curvethrough them, then replaces every point inside the window with a value from that curve. Points outside the window are left untouched.<br/>
+Best for cleanly removing a specific spike, dropout, or bad stretch of data while preserving the shape of the track around it. Because the fit only uses points just inside the window as reference, it works best when those reference points sit on clean, stable ground.
+</p>
 
         <h4>Sparse interpolation</h4>
         <p>Preserves the elevation data for the specified fraction of the coordinate points. The elevations of the other points are replaced with linearly interpolated values. The coordinates are not changed, only the elevations.
@@ -773,18 +778,7 @@ See an example below:
         </ul>
         <p>Consider this method if you have valid known values for the relevant points and you want to preserve from the original file the relative changes in between.<br/>Depending on the general shape of the track, only the high or low elevation is required. If the track goes up and then down (e.g. a hike up a mountain), the high elevation is required. If the track goes down and then up (e.g. a hike down a canyon), the low elevation is required.<br/>The known start/end/high/low elevation values can be entered manually or retrieved from the USGS (this is an external service that may not continue to be available). The known ascent/descent values must be entered manually.</p>
 
-        <h4>Local replacement with interpolation</h4>
-        <p>Adjusts the elevation of the points within the selected window. The new elevations are calculated by interpolating the elevations of the first and last points within the window.<br/>
-Two types of interpolation are available: Polynomial and Constant slope. The latter simply calculates the slope between the average elevation of the first points and the average elevation of the last ones. The result using the Constant slope interpolation will generally be very similar to that of the Polynomial interpolation with order 1.<br/>
-Consider this method if only partial segments of the track have poor quality data, perhaps due to equipment malfunction or environmental adverse conditions such as wind affecting the sensor.<br/>
-To select the window, specify the starting point and the width using the sliders or entering values in the respective fields (the values are expressed in pixels as displayed in the chart on the right). The selected window is highlighted in the elevation chart.<br/>
-Use the Interpolation type toggle to switch between Polynomial and Constant slope.<br/>
-Use the Reference points number box to specify the number of points (at the beginning and end of the window) used for the interpolation.<br/>
-For Polynomial interpolation, enter the order in the Polynomial order number box. The order must be between 0 and 3.<br/>
-If you want to correct multiple segments of the track, set the window and other parameters, click the Apply & keep button, then move the window and repeat as many times as needed. Use the Apply once button for a single correction.</p>
-
-
-
+        
         <h4>USGS data <span class="badge badge-ext">EXT</span></h4>
         <p>Divides the track in the specified number of segments. For each segment, the original elevations of 3 consecutive points in the middle are compared to the USGS elevations of the same 3 points, calculating an adjustment ratio (USGS elevation / original elevation).<br/>
 The same adjustment ratio is then applied to all points in that segment.<br/>
