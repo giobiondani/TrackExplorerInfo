@@ -771,12 +771,12 @@ Best for cleanly removing a specific spike, dropout, or bad stretch of data whil
         <br/>The factor specifies what fraction of elevation points are preserved. For example, a factor of 3 means that 1/3 of the elevations will be preserved. Larger factors (8 or more) work better on noisy, dense recordings but risk obscuring real terrain. Sparse or clean data should use smaller factors (4 or less). Verify the adjusted ascent/descent totals before saving.</p>
 
         <h4>Known values</h4>
-        <p>Recalculates all elevation data based on known values (start and end elevation, high or low elevation, ascent and descent).<br/>The calculation is performed separately on the first part of the track (from the start to the first low/high point) and the second (from the first low/high point to the end).<br/>The new values are calculated such that the following constraints are always respected:</p>
-        <ul>
-            <li>Start elevation + Ascent - Descent - End elevation = 0</li>
-            <li>The relative size of the elevation difference between points is preserved from the original file</li>
-        </ul>
-        <p>Consider this method if you have valid known values for the relevant points and you want to preserve from the original file the relative changes in between.<br/>Depending on the general shape of the track, only the high or low elevation is required. If the track goes up and then down (e.g. a hike up a mountain), the high elevation is required. If the track goes down and then up (e.g. a hike down a canyon), the low elevation is required.<br/>The known start/end/high/low elevation values can be entered manually or retrieved from the USGS (this is an external service that may not continue to be available). The known ascent/descent values must be entered manually.</p>
+        <p>Recalculates the track's elevation from a set of known reference values: start elevation, end elevation, high or low elevation, total ascent, and total descent.<br/>
+            The track is split into two parts at the high (or low) point: start to high/low, and high/low to end. Each part is rescaled independently so its endpoints match the known values you provide, while preserving the relative size of the elevation changes between points from the original file. The known values must satisfy this condition: Start elevation + Ascent - Descent - End elevation = 0.Mbr/>
+            Best when you have trustworthy known values for these specific points (from a trailhead sign, a topo map, or a reliable external source) and want to correct a track's overall elevation profile without discarding the shape of the original data.<br/>
+            It assumes the track has one general shape overall (climbing then descending, or descending then climbing), with a single clear high or low point in between; it is not designed for tracks with several ups and downs.
+        </p>
+        
 
         
         <h4>USGS data <span class="badge badge-ext">EXT</span></h4>
