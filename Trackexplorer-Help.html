@@ -780,13 +780,11 @@ Best for cleanly removing a specific spike, dropout, or bad stretch of data whil
 
         
         <h4>USGS data <span class="badge badge-ext">EXT</span></h4>
-        <p>Divides the track in the specified number of segments. For each segment, the original elevations of 3 consecutive points in the middle are compared to the USGS elevations of the same 3 points, calculating an adjustment ratio (USGS elevation / original elevation).<br/>
-The same adjustment ratio is then applied to all points in that segment.<br/>
-The USGS elevations are retrieved using the Elevation Point Query Service by the USGS (United States Geological Survey).<br/>
-You can find more information about the Elevation Point Query Service at <a href="https://apps.nationalmap.gov/epqs/">https://apps.nationalmap.gov/epqs/</a>". This is an external service that may not continue to be available.<br/>
-Consider this method if the relative elevation changes are correct, but the overall profile is off.<br/>
-For example, if the original elevation is 2000 and the USGS elevation is 2100, the ratio is 1.05. The elevation of all points in the segment is multiplied by 1.05.<br/>
-This function requires Internet connectivity and is limited to a maximum of 10 segments. The processing time for each point is 10 seconds or more. If the elevation of a point can't be retrieved, that point is ignored.</p>
+        <p>This method compares the track's recorded elevations to elevations looked up from USGS at a small number of points along the track ("anchors"). The track's first and last points are always used as anchors; you choose the total number of anchors, and the rest are spaced evenly in between.<br/>
+For each anchor, the difference between the USGS elevation and the recorded elevation is calculated. Every other point is corrected by interpolating between its two nearest anchors, so the correction varies smoothly along the track rather than jumping at any point.<br/>
+The USGS elevations are retrieved using the Elevation Point Query Service by the USGS (United States Geological Survey). You can find more information about the Elevation Point Query Service at <a href="https://apps.nationalmap.gov/epqs/">https://apps.nationalmap.gov/epqs/</a>". This is an external service that may not continue to be available.<br/>
+Consider this method if the relative elevation changes are correct, but the overall profile is off.
+</p>
 
         <h4>Reviewing elevation changes</h4>
         <p>The table on the left and the chart on the right show the original data in red, and the adjusted data in blue.<br/>
