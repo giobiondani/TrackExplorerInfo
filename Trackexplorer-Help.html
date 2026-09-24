@@ -42,20 +42,21 @@
         <p>The main page is the Tracks page, also known as the Home page, which shows a view of your tracks. Here you can select one or more tracks. In the other pages, you can access other general functionality, or functions specific to the track or tracks that you selected:</p>
         <ul>
             <li><strong>New track</strong>: create a new track</li>
-            <li><strong>Track details</strong>: view the details of the first selected track</li>
+            <li><strong>Track details</strong>: view the details of the first selected track; if multiple tracks are selected, choose the focused track.</li>
             <li><strong>Photos</strong>: view the pictures associated with all selected tracks</li>
             <li><strong>Profiles</strong>: view the distance/time and elevation profiles of the selected track(s). The selected tracks must have elevation data in the GPX file.</li>
             <li><strong>Map</strong>: view the selected track(s) overlayed on a map. The selected track(s) must have coordinate data in the GPX file.</li>
-            <li><strong>Collections</strong>: view the list of all collections, or the list of collections that include the selected track(s)</li>
-            <li><strong>History</strong>: view the performance data for the selected tracks over time (for example, distance by week)</li>
-            <li><strong>Planner</strong>: available only when a planned track is selected. Provides functionality to estimate the time needed for the planned track</li>
-            <li><strong>Compare tracks</strong>: view the performance data for the selected tracks in a table, easy to compare</li>
-            <li><strong>GPX editor</strong>: provides functionality to edit the GPX file associated with the first selected track</li>
-            <li><strong>Edit tracks</strong>: update data on all selected tracks</li>
-            <li><strong>Views</strong>: create and manage views</li>
-            <li><strong>Announcements</strong>: news and announcements from the TrackExplorer team</li>
-            <li><strong>Help</strong>: access this help page; there is one section for each of the pages</li>
-            <li><strong>Settings</strong>: configure TrackExplorer's settings</li>
+            <li><strong>Publish</strong>: publish a web page for all selected tracks, or the focused one.</li>
+            <li><strong>Collections</strong>: view the list of all collections, or the list of collections that include the selected track(s).</li>
+            <li><strong>History</strong>: view the performance data for the selected tracks over time (for example, distance by week).</li>
+            <li><strong>Planner</strong>: available only when a planned track is selected. Provides functionality to estimate the time needed for the focused planned track.</li>
+            <li><strong>Compare tracks</strong>: view the performance data for the selected tracks in a table, easy to compare.</li>
+            <li><strong>GPX editor</strong>: provides functionality to edit the GPX file associated with the focused track.</li>
+            <li><strong>Edit tracks</strong>: update data on all selected tracks.</li>
+            <li><strong>Views</strong>: create and manage views.</li>
+            <li><strong>Announcements</strong>: news and announcements from the TrackExplorer team.</li>
+            <li><strong>Help</strong>: access this help page; there is one section for each of the pages.</li>
+            <li><strong>Settings</strong>: configure TrackExplorer's settings.</li>
         </ul>
 
         <h3>How to organize data</h3>
@@ -132,6 +133,9 @@
 
         <h3>Elevation range</h3>
         <p>The range between the lowest and highest elevation on the track. Depending on the page, it may be displayed as both the low and high elevations (e.g. 700-1000) or just with the difference between them (e.g. 300).</p>
+
+        <h3>Focused track</h3>
+        <p>When multiple tracks are selected, this is the one that you navigated to in the Details page. It is relevant when you go from the Details page to another page that offers functionality for a single selected track (for example Photos, Publish, Planner, and GPX Editor).</p>
 
         <h3>Gear</h3>
         <p>The equipment used for the track. For example, for skiing activities this could be the type/model of skis; for biking activities, it could be the type/model of bicycle. Use slashes to create a tree structure: for example, entering the gear as Bike/Mountain/Yeti SB130 will create three nested levels. You will then be able to easily filter for all mountain bikes or all bikes. The gear can be used to group and filter tracks. When you start typing in the gear field, TrackExplorer will make suggestions based on gear that you entered before. You can also use the Gear button to open a navigation tree based on the existing gear structure.</p>
@@ -379,6 +383,11 @@ Because of the rounding rules used in the calculations, when you switch systems 
         <p><strong>Notes:</strong><br/>Add to or remove notes from the track. Notes have a label that can be used to identify notes of the same type across tracks, and to help with filtering.</p>
         <p><strong>Links:</strong><br/>Add to or remove links from the track. Links contain a text and a URL, and may be used to refer to web pages that contain information relevant for the track, for example trip reports, map, pictures, etc.</p>
         <p><strong>Related tracks:</strong><br/>Displays a list of all related tracks, meaning tracks that are in in at least one of the same collections as the current one. You can also add the track to new collections, remove it from existing ones, and navigate to any of the related tracks.</p>
+        <br/>
+        <p><strong>Navigating multiple selected tracks</strong><br/>
+        When you select multiple tracks before opening the Details page, you can quickly move from one to the other using the 'Next selected track' and 'Previous selected track' buttons at the bottom of the page. The number between the buttons shows which selected track you have currently open - this is referred to as the <strong>focused track</strong>.
+        If you then navigate to another page that offers functionality for a single selected track (for example Photos, Publish, Planner, and GPX Editor), the other page will open with the focused track.
+        </p>
     </div>
 
     <h2 onclick="toggleSection(this)">Photos page</h2>
