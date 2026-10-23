@@ -87,7 +87,9 @@
         <p>This functionality is in beta and is subject to changes in future releases.</p>
 
         <h3>Multiple devices</h3>
-        <p>If you install TrackExplorer on multiple devices, you can access the saved files (images and gpx files) from all devices, as long as they have been saved in your OneDrive account. Even if OneDrive is on a different path in each machine, TrackExplorer will attempt to resolve the correct path.</p>
+        <p>The TrackExplorer data files are saved in OneDrive (consumer), so you'll be able to access them from any PC where you have installed the app, as long as you have access to the OneDrive account.<br>
+            Your own files (images and GPX files) will be accessible from multiple devices only if they also are in OneDrive.<br>
+            In this case, when you look at a path in the app, you will see the placeholder &lt;OneDrive&gt;. This automatically resolves the correct OneDrive root path on each PC you use - so the data always looks the same regardless of the PC.</p>
 
         <h3>Logging in</h3>
         <p>You can log in to TrackExplorer using a Microsoft account. This is required only to have access to the optional map types in the Map page. See more details in the Map page section below.</p>
@@ -152,6 +154,9 @@
         <h3>Location</h3>
         <p>The area where the track is. Use slashes to create a tree structure: for example, entering a location as USA/Colorado/Keystone will create three nested levels. You will then be able to easily filter for example all locations within Colorado or within the USA. The location can be used to group and filter tracks. When you start typing in the location field, TrackExplorer will make suggestions based on locations that you entered before. You can also use the Location button to open a navigation tree based on the existing location structure.</p>
 
+        <h3>Map image, Map hero image</h3>
+        <p>If you don't have good photos to use as a hero image for a track, or if you prefer to use a map instead of a photo, you can have TrackExplorer generate a screenshot of the track's map and use it as the hero.</p>
+        
         <h3>Munter rate</h3>
         <p>The Munter calculation can be used to estimate the time that it takes to complete a track. The formula is as follows: <strong>Hours = (distance + ascent / 100) / rate</strong>. The distance is expressed in Km and the ascent in m. The rate varies depending on the activity, terrain features, difficulty, etc. The rate can vary for example from 2 for hiking off trail, to 10 for skiing downhill. For a track with known time, distance and elevation, TrackExplorer reverse calculates four rates - a total rate for the entire track, and separate rates for the uphill, downhill and flat sections. These calculated rates can be used to compare the difficulty of similar activities and tracks, and to estimate the time of planned tracks. See the Planner page for more details and applications.</p>
 
@@ -364,7 +369,8 @@ Because of the rounding rules used in the calculations, when you switch systems 
 
     <h2 onclick="toggleSection(this)">Track details page</h2>
     <div class="section-content">
-        <p>View and edit a track's data. All the fields outlined in the New track page help section are also available in the Track details page, though the status cannot be changed. Additionally, the following sections are also available:</p>
+        <p>View and edit a track's data. All the fields outlined in the New track page help section are also available in the Track details page, though the status cannot be changed.<br/>If needed, you have the ability to rebuild the optimized copy of the hero image. This is needed only if the current copy has been corrupted, which is very unlikely.<br/>
+             Additionally, the following sections are also available:</p>
         <p><strong>Performance data:</strong><br/>
             Displays all distances, times, elevations, speeds and effective Munter rates. Distances, track times, and elevations can be edited. Note the following rules.<br/>
             When editing:<br/>
@@ -869,8 +875,9 @@ When you save the file, you may check the Data is verified box if you think that
         <h3>Recalculate performance data fields from the GPX file</h3>
         <p>Use this if any of the performance values have been manually updated incorrectly and you want to refresh them. Select the field(s) that you want to recalculate, and choose if and how you want to reset the Data is verified box; then press the Recalculate button. TrackExplorer reads all GPX files for all selected tracks and updates the performance data accordingly. Note the if you only reset the Laps/runs field, the GPX file won't actually be read, as that is not needed.</p>
 
-        <h3>Convert images</h3>
-        <p>HEIC images may present performance issues on some PCs. If you are facing this problem, and you have multiple hero images in HEIC format, this can negatively affect your experience in the Tracks page. Use this tool to convert all hero images for the selected tracks from HEIC to JPEG. You can optionally delete the original files.</p>
+        <h3>Rebuild optimized images</h3>
+        <p>In order to optimzize the performance of the Tracks page, TrackExplorer creates optimized copies of your hero images. These copies downsized (if the originals are larger than needed), and converted to JPEG format (if the originals are in other less efficient formats, such as HEIC).<br/>
+            If the optimized copies end up out of sync with the originals (very unlikeley, but it could happen for example in case of an app crash), or if larger optimized copies are needed for un updated version of TrackExplorer, you can use this function to rebuild the optimized copies for all selected tracks.</p>
     </div>
 
     <h2 onclick="toggleSection(this)">Views page</h2>
@@ -949,7 +956,7 @@ You can apply multiple combinations at the same time: for example, Intersection 
         <p>From the Settings page, you can back up the data on the fly, schedule an automatic recurring backup, and restore data from a previous backup. The files and folders that are saved in the backup include:</p>
         <ul>
             <li>TrackExplorerData.json (contains all track data, including notes, links, custom fields settings and state information); views definitions; and collection relationships</li>
-            <li>HeroImages folder (contains the hero images created from the tracks' maps)</li>
+            <li>MapImages folder (contains the hero images created from the tracks' maps)</li>
         </ul>
 
         <p>You should never edit these files manually, as they are likely to become corrupt. However, you may back them up yourself and replace them if needed (before opening the app).<br/>Note that the backup process does not save any of the demo files, even if they have been modified, nor does it include the coordinate files (see below).</p>
@@ -957,6 +964,7 @@ You can apply multiple combinations at the same time: for example, Intersection 
         <h3>Other files and folders</h3>
         <p>In addition to the files mentioned above, note the following:</p>
         <ul>
+            <li>HeroImages folder, within the app folder: contains the optimized copies of your hero images</li>
             <li>TrackExplorer (if so enabled in the settings) will generate a file containing the coordinates of the images in each hero image's folder. The file is named TrackExplorerPhotoCoords.json and is created for each track the first time you display photos in the Map page.</li>
             <li>If you publish web pages to Netlify, TrackExplorer generates a folder named "Publish-Netlify" within the app folder. This folder contains all files that are synced with Netlify. See below for more details.</li>
             <li>Application error logs are saved to the app's local cache folder. There is one log file per app session, but it's saved only if there are errors during the session. The file name is log_yyyymmdd_hhmmss.txt, based on the date/time when it was created. You can access the log folder from the Settings page.</li>
